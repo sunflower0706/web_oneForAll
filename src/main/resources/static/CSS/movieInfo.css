@@ -42,7 +42,7 @@ html, body{
 
 .padding{
     margin: auto;
-    height: 10px; 
+    height: 10px;
     width: 60%;
     background-color: #1a1a1a;
 }
@@ -124,7 +124,7 @@ html, body{
     #btn{
         font-size: 12px;
     }
-    
+
 }
 
 .latest-episode{
@@ -139,7 +139,7 @@ html, body{
 
 .btn-episode{
     background-color: #3a3a3a;
-    border-color: #d43f3a;
+    width: 120px;
 }
 
 .info_film{
@@ -177,3 +177,43 @@ html, body{
     padding-top: 10px;
     color: #828282;
 }
+
+.video-film{
+    margin: auto;
+    width: 60%;
+    background-color: #252525;
+    height: auto;
+}
+
+video{
+    width: 100%;
+    height: auto;
+}
+
+.episode{
+    font-size: 14px;
+    margin: auto;
+    width: 60%;
+    max-height: 600px;
+    background-color: #252525;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.film-info{
+    margin: auto;
+    width: 60%;
+    background-color: #252525;
+    padding-top: 12px;
+    padding-left: 12px;
+}
+.film-star-icon{
+    padding-top: 5px;
+}
+.film-title-episode{
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+

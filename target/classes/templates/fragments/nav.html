@@ -1,0 +1,43 @@
+<div th:fragment="nav">
+    <!-- preloader  -->
+    <div id="preloader">
+        <div class="status">&nbsp;</div>
+    </div>
+    <!-- NAV -->
+    <div class="nav-wrapper">
+        <div class="container">
+            <div class="nav">
+                <a th:href="@{/}" class="logo">
+                    <i class='bx bx-movie-play bx-tada main-color'></i>ALLFOR<span class="main-color">ONE</span>x
+                </a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Genre</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Series</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Top Movie</a></li>
+                    <li th:if="${session.auth} != true">
+                        <a th:href="@{/account/login}" class="btn btn-hover">
+                            <span>Sign in</span>
+                        </a>
+                    </li>
+                    <li th:if="${session.auth} == true">
+
+                    </li>
+<!--                    <div class="search">-->
+<!--                        <input type="text" class="input" placeholder="Search...">-->
+<!--                        <button class="btn">-->
+<!--                            <i class="fas fa-search"></i>-->
+<!--                        </button>-->
+<!--                    </div>-->
+                </ul>
+                <!-- MOBILE MENU TOGGLE -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="hamburger"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END NAV -->
+</div>

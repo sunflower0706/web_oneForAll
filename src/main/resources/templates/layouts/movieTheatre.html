@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="fragments/header :: head">
+</head>
+<body>
+    <div th:replace="fragments/nav :: nav"></div>
+    <div layout:fragment="content">
+        <div class="app">
+            <div class="container">
+                <div class="padding"></div>
+                <div class="video-film">
+                    <iframe width="100%" height="500px" src="https://www.youtube.com/embed/wseo-rRTQYA?list=RDwseo-rRTQYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="padding"></div>
+                <div class="episode">
+                    <h3>Danh Sách Tập: </h3>
+                    <a href="#" class="btn btn-episode">Tập Cuối</a>
+                    <a href="#" class="btn btn-episode">Tập 11</a>
+                    <a href="#" class="btn btn-episode">Tập 10</a>
+                    <a href="#" class="btn btn-episode">Tập 9</a>
+                    <a href="#" class="btn btn-episode">Tập 8</a>
+                    <a href="#" class="btn btn-episode">Tập 7</a>
+                    <a href="#" class="btn btn-episode">Tập 6</a>
+                    <a href="#" class="btn btn-episode">Tập 5</a>
+                    <a href="#" class="btn btn-episode">Tập 4</a>
+                    <a href="#" class="btn btn-episode">Tập 3</a>
+                    <a href="#" class="btn btn-episode">Tập 2</a>
+                    <a href="#" class="btn btn-episode">Tập 1</a>
+                </div>
+                <div class="padding"></div>
+                <div class="film-info">
+                    <div class="film-star-text">
+                        <h3 >Đánh giá Phim</h3>
+                    </div>
+                    <div class="film-star-icon">
+                        <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
+                        <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
+                        <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
+                        <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
+                        <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
+                        <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
+                        <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
+                        <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
+                        <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
+                        <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
+                    </div>
+                    <div class="film-title-episode">
+                        <h2>Wanda Doctor Strange - Tập Cuối </h2>
+                    </div>
+                </div>
+                <div class="padding"></div>
+                <div class="navbar">
+                    <ul class="navbar-list">
+                        <li class="navbar-list-item">Xem Phim ></li>
+                        <li class="navbar-list-item">Phim Hành Động ></li>
+                        <li class="navbar-list-item">Phim Viễn Tưởng ></li>
+                        <li class="navbar-list-item">Wanda Doctor Strange</li>
+                    </ul>
+                </div>
+                <div class="padding"></div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

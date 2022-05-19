@@ -1,0 +1,179 @@
+:root{
+    --padding-text-banner: 10px;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #fdfdfd;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+}
+
+.navbar{
+    margin: auto;
+    max-height: 80px;
+    width: 60%;
+    background-color: #252525;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+}
+
+.navbar-list{
+    list-style: none;
+    color: #ff9601;
+    margin: auto;
+}
+
+.navbar-list-item{
+    display: inline-block;
+}
+
+.padding{
+    margin: auto;
+    height: 10px; 
+    width: 60%;
+    background-color: #1a1a1a;
+}
+
+.banner{
+    display: block;
+    width: 60%;
+    background: url("../images/wanda-banner.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    position: relative;
+    height: 0;
+    padding-bottom: 33.7%;
+}
+
+.banner::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.3);
+}
+
+.banner-avatar{
+    position: absolute;
+    vertical-align: middle;
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #fff;
+    bottom: 30px;
+    left: 10px;
+}
+
+.banner-text{
+    position: absolute;
+    bottom: 30px;
+    left: 280px ;
+}
+
+.banner-btn{
+    list-style: none;
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 20px;
+    margin-top: 15px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    font-size: 15px;
+}
+
+.banner-btn-trailer{
+    background-color: #5bc0de;
+    border-color: #46b8da
+}
+
+.banner-btn-see{
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+@media (max-width: 1200px) {
+    .banner-avatar{
+        display: none;
+    }
+    .banner-text{
+        float: left;
+        bottom: 10px;
+        left: 10px;
+        font-size: 12px;
+    }
+    #btn{
+        font-size: 12px;
+    }
+    
+}
+
+.latest-episode{
+    font-size: 14px;
+    margin: auto;
+    max-height: 600px;
+    width: 60%;
+    background-color: #252525;
+    padding-left: 12px;
+    padding-bottom: 15px;
+}
+
+.btn-episode{
+    background-color: #3a3a3a;
+    border-color: #d43f3a;
+}
+
+.info_film{
+    font-size: 14px;
+    margin: auto;
+    max-height: 350px;
+    width: 60%;
+    background-color: #252525;
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.info{
+    list-style: none;
+}
+
+.item_info{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.block_content_film{
+    font-size: 14px;
+    margin: auto;
+    max-height: 2000px;
+    width: 60%;
+    background-color: #252525;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+}
+
+.content_film{
+    padding-top: 10px;
+    color: #828282;
+}

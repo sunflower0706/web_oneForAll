@@ -9,56 +9,57 @@ import java.util.Date;
 @Table(name = "accounts")
 public class Account {
     @Id
+    @Column(name = "idTK")
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
-    @Column(name = "Ho")
-    private String firstName;
+    @Column(name = "ho")
+    private String ho;
 
-    @Column(name = "Ten")
-    private String lastName;
+    @Column(name = "ten")
+    private String ten;
 
-    @Column(name = "GioiTinh")
-    private boolean female;
+    @Column(name = "gioi_tinh")
+    private boolean gioi_tinh;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "NgaySinh")
+    @Column(name = "ngay_sinh")
     @Getter
-    private Date birth;
+    private Date ngay_sinh;
 
-    @Column(name = "Email")
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "MatKhau")
-    private String password;
+    @Column(name = "mat_khau")
+    private String mat_khau;
 
-    @Column(name = "SDT")
-    private String phoneNumber;
+    @Column(name = "sdt")
+    private String sdt;
 
-    @Column(name = "Avt")
+    @Column(name = "avt")
     private String avt;
 
-    @Column(name = "PhanQuyen")
-    private boolean role;
+    @Column(name = "phan_quyen")
+    private boolean phan_quyen;
 
     public Account(){}
 
-    public Account(String email, String password){
+    public Account(String email, String mat_khau){
         this.email = email;
-        this.password = password;
+        this.mat_khau = mat_khau;
     }
 
-    public Account(int id, String firstName, String lastName, boolean female, Date birth, String email, String password, String phoneNumber, String avt, boolean role){
+    public Account(int id, String ho, String ten, boolean gioi_tinh, Date ngay_sinh, String email, String mat_khau, String sdt, String avt, boolean phan_quyen){
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.female = female;
-        this.birth = birth;
+        this.ho = ho;
+        this.ten = ten;
+        this.gioi_tinh = gioi_tinh;
+        this.ngay_sinh = ngay_sinh;
         this.email = email;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
+        this.mat_khau = mat_khau;
+        this.sdt = sdt;
         this.avt = avt;
-        this.role = role;
+        this.phan_quyen = phan_quyen;
     }
 
     public void setId(int id) {
@@ -69,36 +70,36 @@ public class Account {
         return id;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setHo(String ho) {
+        this.ho = ho;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getHo() {
+        return ho;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setTen(String ten) {
+        this.ten = ten;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getTen() {
+        return ten;
     }
 
-    public void setFemale(boolean female) {
-        this.female = female;
+    public void setGioi_tinh(boolean gioi_tinh) {
+        this.gioi_tinh = gioi_tinh;
     }
 
-    public boolean isFemale() {
-        return female;
+    public boolean isGioi_tinh() {
+        return gioi_tinh;
     }
 
-    public void setBirth(Date birth) {
-        this.birth = birth;
+    public void setNgay_sinh(Date ngay_sinh) {
+        this.ngay_sinh = ngay_sinh;
     }
 
-    public Date getBirth() {
-        return birth;
+    public Date getNgay_sinh() {
+        return ngay_sinh;
     }
 
     public void setEmail(String email) {
@@ -109,20 +110,20 @@ public class Account {
         return email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setMat_khau(String mat_khau) {
+        this.mat_khau = mat_khau;
     }
 
-    public String getPassword() {
-        return password;
+    public String getMat_khau() {
+        return mat_khau;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getSdt() {
+        return sdt;
     }
 
     public void setAvt(String avt) {
@@ -133,27 +134,27 @@ public class Account {
         return avt;
     }
 
-    public void setRole(boolean role) {
-        this.role = role;
+    public void setPhan_quyen(boolean phan_quyen) {
+        this.phan_quyen = phan_quyen;
     }
 
-    public boolean isRole() {
-        return role;
+    public boolean isPhan_quyen() {
+        return phan_quyen;
     }
 
     @Override
     public String toString() {
-        return "Accounts{" +
+        return "Account{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", female=" + female +
-                ", birth=" + birth +
+                ", ho='" + ho + '\'' +
+                ", ten='" + ten + '\'' +
+                ", gioi_tinh=" + gioi_tinh +
+                ", ngay_sinh=" + ngay_sinh +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                ", mat_khau='" + mat_khau + '\'' +
+                ", sdt='" + sdt + '\'' +
                 ", avt='" + avt + '\'' +
-                ", role=" + role +
+                ", phan_quyen=" + phan_quyen +
                 '}';
     }
 }

@@ -50,7 +50,6 @@ html, body{
 .banner{
     display: block;
     width: 60%;
-    background: url("../images/wanda-banner.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     margin: auto;

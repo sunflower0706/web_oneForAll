@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="fragments/header :: head">
+</head>
+<body>
+    <div th:replace="fragments/nav :: nav"></div>
+    <div layout:fragment="content">
+        <link rel="stylesheet" th:href="@{/CSS/admin.css}">
+        <input type="checkbox" id="nav-toggle">
+        <div class="sidebar">
+            <div class="sidebar-brand">
+                <h2><span class="lab la-youtube"></span><span>ALLFORONE</span></h2>
+            </div>
+
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="" class="active"><span class="las la-igloo"></span>
+                            <span>Bảng điều khiển</span></a>
+                    </li>
+                    <li>
+                        <a href=""><span class="las la-box"></span>
+                            <span>Quản lý dữ liệu</span></a>
+                    </li>
+                    <li>
+                        <a href=""><span class="las la-users"></span>
+                            <span>Người dùng</span></a>
+                    </li>
+                    <li>
+                        <a href=""><span class="las la-file-video"></span>
+                            <span>Film</span></a>
+                    </li>
+                    <li>
+                        <a href=""><span class="las la-question-circle"></span>
+                            <span>Về web</span></a>
+                    </li>
+                    <li>
+                        <a href=""><span class="las la-sign-out-alt"></span>
+                            <span>Đăng xuất</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <header>
+                <h2>
+                    <label for="nav-toggle">
+                        <span class="las la-bars"></span>
+                    </label>
+                    Bảng điều khiển
+                </h2>
+
+                <div class="search-wrapper">
+                    <span class="las la-search"></span>
+                    <input type="search" placeholder="Search here">
+                </div>
+
+                <div class="user-wrapper">
+                    <img src="img/avt4.jpg" width="40px" height="40px" alt="">
+                    <div>
+                        <h4>Liluphuong</h4>
+                        <small>Super admin</small>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <div class="cards">
+                    <div class="card-single">
+                        <div>
+                            <h1>53</h1>
+                            <span>Users</span>
+                        </div>
+                        <div>
+                            <span class="las la-users"></span>
+                        </div>
+                    </div>
+                    <div class="card-single">
+                        <div>
+                            <h1>43</h1>
+                            <span>Film</span>
+                        </div>
+                        <div>
+                            <span class="las la-file-video"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-grid">
+                    <div class="film">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Phim gần đây</h3>
+                                <button>See all <span class="las la-arrow-right">
+                                </span></button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table width="100%">
+                                        <thead>
+                                        <tr>
+                                            <td>Tiêu đề</td>
+                                            <td>Thể loại</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Wanda Doctor Strange</td>
+                                            <td>Viễn tưởng</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wanda Doctor Strange</td>
+                                            <td>Viễn tưởng</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wanda Doctor Strange</td>
+                                            <td>Viễn tưởng</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wanda Doctor Strange</td>
+                                            <td>Viễn tưởng</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wanda Doctor Strange</td>
+                                            <td>Viễn tưởng</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wanda Doctor Strange</td>
+                                            <td>Viễn tưởng</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wanda Doctor Strange</td>
+                                            <td>Viễn tưởng</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wanda Doctor Strange</td>
+                                            <td>Viễn tưởng</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wanda Doctor Strange</td>
+                                            <td>Viễn tưởng</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wanda Doctor Strange</td>
+                                            <td>Viễn tưởng</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="users">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Người dùng mới</h3>
+                                <button>See all <span class="las la-arrow-right">
+                                </span></button>
+                            </div>
+                            <div class="card-body">
+                                <div class="user">
+                                    <div class="info-basic">
+                                        <img src="img/avt5.jpg" width="40px" height="40px" alt="">
+                                        <div>
+                                            <h4>Minh Chiến</h4>
+                                            <small>user</small>
+                                        </div>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="las la-user-circle"></span>
+                                        <span class="las la-comment"></span>
+                                        <span class="las la-phone"></span>
+                                    </div>
+                                </div>
+
+                                <div class="user">
+                                    <div class="info-basic">
+                                        <img src="img/avt5.jpg" width="40px" height="40px" alt="">
+                                        <div>
+                                            <h4>Minh Chiến</h4>
+                                            <small>user</small>
+                                        </div>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="las la-user-circle"></span>
+                                        <span class="las la-comment"></span>
+                                        <span class="las la-phone"></span>
+                                    </div>
+                                </div>
+                                <div class="user">
+                                    <div class="info-basic">
+                                        <img src="img/avt5.jpg" width="40px" height="40px" alt="">
+                                        <div>
+                                            <h4>Minh Chiến</h4>
+                                            <small>user</small>
+                                        </div>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="las la-user-circle"></span>
+                                        <span class="las la-comment"></span>
+                                        <span class="las la-phone"></span>
+                                    </div>
+                                </div>
+                                <div class="user">
+                                    <div class="info-basic">
+                                        <img src="img/avt5.jpg" width="40px" height="40px" alt="">
+                                        <div>
+                                            <h4>Minh Chiến</h4>
+                                            <small>user</small>
+                                        </div>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="las la-user-circle"></span>
+                                        <span class="las la-comment"></span>
+                                        <span class="las la-phone"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

@@ -9,26 +9,32 @@
     <div layout:fragment="content">
         <link rel="stylesheet" th:href="@{/CSS/movieInfo.css}">
         <div class="app">
-            <div class="container">
+            <div class="container" th:object="${movie}">
                 <div class="padding"></div>
-                <div class="video-film">
-                    <iframe width="100%" height="500px" src="https://www.youtube.com/embed/wseo-rRTQYA?list=RDwseo-rRTQYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="navbar">
+                    <ul class="navbar-list">
+                        <li class="navbar-list-item">Xem Phim ></li>
+                        <li class="navbar-list-item">Phim Hành Động ></li>
+                        <li class="navbar-list-item">Phim Viễn Tưởng ></li>
+                        <li class="navbar-list-item">Wanda Doctor Strange</li>
+                    </ul>
                 </div>
                 <div class="padding"></div>
-                <div class="episode">
-                    <h3>Danh Sách Tập: </h3>
-                    <a href="#" class="button btn-episode">Tập Cuối</a>
-                    <a href="#" class="button btn-episode">Tập 11</a>
-                    <a href="#" class="button btn-episode">Tập 10</a>
-                    <a href="#" class="button btn-episode">Tập 9</a>
-                    <a href="#" class="button btn-episode">Tập 8</a>
-                    <a href="#" class="button btn-episode">Tập 7</a>
-                    <a href="#" class="button btn-episode">Tập 6</a>
-                    <a href="#" class="button btn-episode">Tập 5</a>
-                    <a href="#" class="button btn-episode">Tập 4</a>
-                    <a href="#" class="button btn-episode">Tập 3</a>
-                    <a href="#" class="button btn-episode">Tập 2</a>
-                    <a href="#" class="button btn-episode">Tập 1</a>
+                <div class="video-film">
+
+                </div>
+                <div class="padding"></div>
+                <div class="episode" th:with="ep=${movie.getThoi_luong()}-1">
+                    <th:block th:if="${ep} < 1">
+                        <span href="#" class="button btn-episode">Phim lẻ</span>
+                    </th:block>
+                    <th:block th:if="${ep} > 1">
+                        <h3>Danh Sách Tập: </h3>
+                        <th:block  th:each="i:${#numbers.sequence(1, ep, 1)}">
+                            <a href="#" class="button btn-episode" th:text="'Tập '+${i}"></a>
+                        </th:block>
+                        <a href="#" class="button btn-episode">Tập Cuối</a>
+                    </th:block>
                 </div>
                 <div class="padding"></div>
                 <div class="film-info">
@@ -50,15 +56,6 @@
                     <div class="film-title-episode">
                         <h2>Wanda Doctor Strange - Tập Cuối </h2>
                     </div>
-                </div>
-                <div class="padding"></div>
-                <div class="navbar">
-                    <ul class="navbar-list">
-                        <li class="navbar-list-item">Xem Phim ></li>
-                        <li class="navbar-list-item">Phim Hành Động ></li>
-                        <li class="navbar-list-item">Phim Viễn Tưởng ></li>
-                        <li class="navbar-list-item">Wanda Doctor Strange</li>
-                    </ul>
                 </div>
                 <div class="padding"></div>
             </div>

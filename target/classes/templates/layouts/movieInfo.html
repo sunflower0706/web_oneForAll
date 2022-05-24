@@ -8,7 +8,8 @@
     <div th:replace="fragments/nav :: nav"></div>
     <div layout:fragment="content">
         <link rel="stylesheet" type="text/css" th:href="@{/CSS/movieInfo.css}"/>
-        <div class="app">
+        <th:block th:object="${movie}">
+            <div class="app">
             <div class ="container">
                 <div class="navbar">
                     <ul class="navbar-list">
@@ -19,28 +20,33 @@
                     </ul>
                 </div>
                 <div class="padding"></div>
-                <div class="banner">
-                    <div class="banner-info">
-                        <img class="banner-avatar" th:src="@{/images/wanda-banner.jpg}" alt=""/>
-                        <div class="banner-text">
-                            <h1>
-                                Wanda Doctor Strange
-                            </h1>
-                            <h2>
-                                Wanda Doctor Strange (2022)
-                            </h2>
-                            <div class="banner-btn" >
-                                <a href="#" class="button banner-btn-trailer">Trailer</a>
-                                <a href="#" class="button banner-btn-see">Xem phim</a>
+                <th:block th:object="${name}">
+                    <div class="banner" th:style="'background: url(/images/movies/'+${name}+'.jpg); background-size: 100% 100%;'">
+                        <div class="banner-info">
+                            <img class="banner-avatar" th:src="@{'/images/movies/'+${name}+'.jpg'}" alt=""/>
+                            <div class="banner-text">
+                                <h1 th:text="${movie.getTen_phim()}">
+                                </h1>
+                                <div class="banner-btn" >
+                                    <a href="#" class="button banner-btn-trailer">Trailer</a>
+                                    <a th:href="@{'/movie/theatre/'+${name}+'/'+${movie.getId()}}" class="button banner-btn-see">Xem phim</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </th:block>
                 <div class="padding"></div>
-                <div class="latest-episode">
-                    <span>Tập mới nhất:</span>
-                    <a href="#" class="button btn-episode">Tập cuối</a>
-                    <a href="#" class="button btn-episode">Kề cuối</a>
+                <div class="latest-episode" th:with="ep=${movie.getThoi_luong()}-1">
+                    <th:block th:if="${ep} < 1">
+                        <span class="button btn-episode">Phim lẻ</span>
+                    </th:block>
+                    <th:block th:if="${ep} > 1">
+                        <span>Tập mới nhất:</span>
+                        <th:block  th:each="i:${#numbers.sequence(1, ep, 1)}">
+                            <a href="#" class="button btn-episode" th:text="'Tập '+${i}"></a>
+                        </th:block>
+                        <a href="#" class="button btn-episode">Tập Cuối</a>
+                    </th:block>
                 </div>
                 <div class="padding"></div>
                 <div class="info_film">
@@ -57,12 +63,12 @@
                         <img th:src="@{/images/star-off.png}" alt="" class="star_icon"/>
                     </div>
                     <ul class="info">
-                        <li class = "item_info"><label>Đang phát: </label> <span><font color="red">HD Vietsub</font></span></li>
-                        <li class = "item_info"><label>Năm phát hành: </label><a href="#">2022</a></li>
-                        <li class = "item_info"><label>Quốc gia: </label><a href="#">Mỹ</a></li>
+                        <li class = "item_info"><label>Đang phát: </label> <span><font color="red" th:text="${movie.getChat_luong()}"></font></span></li>
+                        <li class = "item_info"><label>Năm phát hành: </label><a href="#" th:text="${movie.getNam()}"></a></li>
+                        <li class = "item_info"><label>Quốc gia: </label><a href="#" th:text="${movie.getQuoc_gia()}"></a></li>
                         <li class = "item_info"><label>Thể loại: </label><a href="#">Phim Viễn Tưởng, Phim Hành Động</a></li>
                         <li class = "item_info"><label>Đạo diễn: </label><span>None</span></li>
-                        <li class = "item_info"><label>Thời lượng: </label><span>None</span></li>
+                        <li class = "item_info"><label>Thời lượng: </label><span th:text="${movie.getThoi_luong()}+' Tập'"></span></li>
                         <li class = "item_info"><label>Diễn viên: </label><span>None</span></li>
                     </ul>
                 </div>
@@ -70,12 +76,13 @@
                 <div class="block_content_film">
                     <h3>Nội dung phim: </h3>
                     <div class="content_film">
-                        <b>Thả Thí Thiên Hạ (Tranh Thiên Hạ)</b>
-                        "Who Rules The World 2022 Full HD Vietsub Thuyết Minh Hắc Phong Tức đẹp trai và lịch lãm trong khi Bạch Phong Tịch uy nghi và không gò bó. Họ đối lập nhau như đen và trắng và vô song về kỹ năng. Bị kẹt trong chiến tranh và hỗn loạn của thế giới võ hiệp, những bông hoa tình yêu bắt đầu nở giữa những giọt máu đã hy sinh trong mười năm qua.<br>Trong tiểu thuyết, nữ chính được miêu tả là một thiếu nữ, dung mạo xinh đẹp phóng khoáng như gió. Một nhân vật phức tạp với hai thân phận khác nhau được gọi là "Bạch Phong Tịch". Một phụ nữ mạnh mẽ, thông minh. Danh tính thứ hai của cô là một công chúa đầy tham vọng, người muốn bảo vệ đất nước của mình và chinh phục các quốc gia khác.<br>TUYỂN TẬP CÁC BÀI HÁT NHẠC PHIM CỦA THẢ THÍ THIÊN HẠ SẮP RA MẮT<br>|4.17 |"Vô Song " - Lưu Vũ Ninh (Ca khúc chủ đề)<br>|4.19| " Phong Tức " - Hồ Ngạn Bân/ Diệp Huyền Thanh (Ost kết phim)<br>|4.20| " Nhất Mộng Phù Du "- Uông Tô Lang (Ca khúc chủ đề)<br>|5.02| "Cô Chú "- Đàm Duy Duy<br>|5.09 | " Như Mộng" - Lại Mỹ Vân<br>|5.10 |" Thả Thí Thiên Hạ "- Lưu Vũ Ninh/ Hồ Ngạn Bân/ Diệp Huyền Thanh/ Uông Tô Lang/ Đàm Duy Duy/ Lại Mỹ Vân<br>Lịch chiếu phim thả thí thiên hạ review<br>19h-20h Thứ 2,3,4 mỗi ngày 2 tập, ngày đầu 8 tập<br>Review 1 vài note <strong>phim tranh thiên hạ</strong>: vài tập đầu của phim rất lôi cuốn, mạch phim nhanh, dồn dập, các cảnh võ thuật rất bắt mắt, cảnh quay rộng, chân thật, xem rất thích mắt!<br>
+                        <b th:text="${movie.getTen_phim()}"></b>
+                        <span th:text="${movie.getMo_ta()}"></span><br>
                     </div>
                 </div>
             </div>
         </div>
+        </th:block>
     </div>
     <div th:replace="fragments/footer :: footer"></div>
 </body>

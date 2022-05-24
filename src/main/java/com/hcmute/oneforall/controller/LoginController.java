@@ -44,8 +44,6 @@ public class LoginController {
 			return "layouts/login";
 		}
 
-//		endSession(session);
-
 		return "redirect:/";
 	}
 

@@ -9,9 +9,9 @@
 }
 
 html, body{
-    font-family: sans-serif;
+    font-family: "Cairo", sans-serif;
     box-sizing: border-box;
-    font-size: 15px;
+    font-size: 16px;
     color: #fdfdfd;
 }
 
@@ -90,9 +90,10 @@ html, body{
     list-style: none;
 }
 
-.btn{
+.button{
     display: inline-block;
     text-decoration: none;
+    text-transform: uppercase;
     padding: 7px 20px;
     margin-top: 15px;
     color: #fff;

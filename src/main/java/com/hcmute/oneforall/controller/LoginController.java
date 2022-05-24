@@ -24,9 +24,14 @@ public class LoginController {
 		return "layouts/account";
 	}
 
-	@GetMapping(value = "/edit")
-	public static String editAccount(Model model){
-		return "layouts/editAccount";
+	@GetMapping(value = "/history")
+	public static String history(Model model){
+		return "layouts/history";
+	}
+
+	@GetMapping(value = "/later")
+	public static String watchLater(Model model){
+		return "layouts/watchLater";
 	}
 
 	@GetMapping(value = "/login")
@@ -49,7 +54,7 @@ public class LoginController {
 						@RequestParam(value = "confirmPassword", required = false) String confirmPassword,
 						ModelMap modelMap,
 						HttpServletRequest request){
-		String password = Objects.requireNonNull(account.getPassword());
+		String password = Objects.requireNonNull(account.getMat_khau());
 		HttpSession session = request.getSession();
 
 		//	Sign up
@@ -58,7 +63,7 @@ public class LoginController {
 			if (authAcc == null) {
 				String bcryptHashString = BCrypt.withDefaults().hashToString(12, password.toCharArray());
 
-				account.setPassword(bcryptHashString);
+				account.setMat_khau(bcryptHashString);
 				accountRepository.save(account);
 
 				setSession(session, account);
@@ -71,7 +76,7 @@ public class LoginController {
 
 		//	login
 		if (authAcc != null){
-			BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), authAcc.getPassword());
+			BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), authAcc.getMat_khau());
 			if (result.verified) {
 				setSession(session, account);
 

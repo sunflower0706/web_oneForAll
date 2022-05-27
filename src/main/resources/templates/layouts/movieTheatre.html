@@ -8,58 +8,60 @@
     <div th:replace="fragments/nav :: nav"></div>
     <div layout:fragment="content">
         <link rel="stylesheet" th:href="@{/CSS/movieInfo.css}">
-        <div class="app">
-            <div class="container" th:object="${movie}">
-                <div class="padding"></div>
-                <div class="navbar">
-                    <ul class="navbar-list">
-                        <li class="navbar-list-item">Xem Phim ></li>
-                        <li class="navbar-list-item">Phim Hành Động ></li>
-                        <li class="navbar-list-item">Phim Viễn Tưởng ></li>
-                        <li class="navbar-list-item">Wanda Doctor Strange</li>
-                    </ul>
-                </div>
-                <div class="padding"></div>
-                <div class="video-film">
+        <th:block th:object="${movie}">
+            <div class="app">
+                <div class="container">
+                    <div class="padding"></div>
+                    <div class="navbar">
+                        <ul class="navbar-list">
+                            <li class="navbar-list-item">Xem Phim ></li>
+                            <li class="navbar-list-item">Phim Hành Động ></li>
+                            <li class="navbar-list-item">Phim Viễn Tưởng ></li>
+                            <li class="navbar-list-item">Wanda Doctor Strange</li>
+                        </ul>
+                    </div>
+                    <div class="padding"></div>
+                    <div class="video-film">
 
-                </div>
-                <div class="padding"></div>
-                <div class="episode" th:with="ep=${movie.getThoi_luong()}-1">
-                    <th:block th:if="${ep} < 1">
-                        <span href="#" class="button btn-episode">Phim lẻ</span>
-                    </th:block>
-                    <th:block th:if="${ep} > 1">
-                        <h3>Danh Sách Tập: </h3>
-                        <th:block  th:each="i:${#numbers.sequence(1, ep, 1)}">
-                            <a href="#" class="button btn-episode" th:text="'Tập '+${i}"></a>
+                    </div>
+                    <div class="padding"></div>
+                    <div class="episode" th:with="ep=${movie.getThoi_luong()}-1">
+                        <th:block th:if="${ep} < 1">
+                            <span href="#" class="button btn-episode">Phim lẻ</span>
                         </th:block>
-                        <a href="#" class="button btn-episode">Tập Cuối</a>
-                    </th:block>
+                        <th:block th:if="${ep} > 1">
+                            <h3>Danh Sách Tập: </h3>
+                            <th:block  th:each="i:${#numbers.sequence(1, ep, 1)}">
+                                <a href="#" class="button btn-episode" th:text="'Tập '+${i}"></a>
+                            </th:block>
+                            <a href="#" class="button btn-episode">Tập Cuối</a>
+                        </th:block>
+                    </div>
+                    <div class="padding"></div>
+                    <div class="film-info">
+                        <div class="film-star-text">
+                            <h3 >Đánh giá Phim</h3>
+                        </div>
+                        <div class="film-star-icon">
+                            <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
+                            <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
+                            <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
+                            <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
+                            <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
+                            <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
+                            <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
+                            <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
+                            <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
+                            <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
+                        </div>
+                        <div class="film-title-episode">
+                            <h2 th:text="${movie.getTen_phim()}"></h2>
+                        </div>
+                    </div>
+                    <div class="padding"></div>
                 </div>
-                <div class="padding"></div>
-                <div class="film-info">
-                    <div class="film-star-text">
-                        <h3 >Đánh giá Phim</h3>
-                    </div>
-                    <div class="film-star-icon">
-                        <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
-                        <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
-                        <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
-                        <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
-                        <img th:src="@{/images/star-on.png}" alt="" class="star_icon">
-                        <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
-                        <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
-                        <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
-                        <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
-                        <img th:src="@{/images/star-off.png}" alt="" class="star_icon">
-                    </div>
-                    <div class="film-title-episode">
-                        <h2>Wanda Doctor Strange - Tập Cuối </h2>
-                    </div>
-                </div>
-                <div class="padding"></div>
             </div>
-        </div>
+        </th:block>
     </div>
     <div th:replace="fragments/footer :: footer"></div>
 </body>

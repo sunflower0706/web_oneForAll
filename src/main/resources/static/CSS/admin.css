@@ -15,6 +15,7 @@
 
 body {
     position: relative;
+    background-color: #f1f5f9 !important;
     height: 100%;
     width: 100%;
     box-sizing: border-box;
@@ -28,7 +29,7 @@ body {
     top: 0;
     height: 100%;
     background: var(--main-color);
-    z-index: 100;
+    z-index: 1;
     transition: width 300ms;
 }
 

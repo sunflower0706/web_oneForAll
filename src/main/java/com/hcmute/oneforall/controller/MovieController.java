@@ -1,6 +1,8 @@
 package com.hcmute.oneforall.controller;
 
 import com.hcmute.oneforall.beans.Movie;
+import com.hcmute.oneforall.repositories.GenreRepository;
+import com.hcmute.oneforall.repositories.MovieGenreRepository;
 import com.hcmute.oneforall.repositories.MovieRepository;
 import com.hcmute.oneforall.utils.MovieNameImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,12 @@ import java.util.List;
 public class MovieController {
     @Autowired
     private MovieRepository movieRepository;
+
+    @Autowired
+    private GenreRepository genreRepository;
+
+    @Autowired
+    private MovieGenreRepository movieGenreRepository;
 
     @GetMapping(value = "/info/{name}/{id}")
     public String movieInfo(Model model,

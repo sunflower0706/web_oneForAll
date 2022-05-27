@@ -57,6 +57,11 @@
                         <div class="film-title-episode">
                             <h2 th:text="${movie.getTen_phim()}"></h2>
                         </div>
+                        <h3>Nội dung phim: </h3>
+                        <div class="content_film">
+                            <b th:text="${movie.getTen_phim()}"></b>
+                            <span th:text="${movie.getMo_ta()}"></span><br>
+                        </div>
                     </div>
                     <div class="padding"></div>
                 </div>

@@ -1,6 +1,4 @@
 <div th:fragment="nav">
-    <link rel="stylesheet" type="text/css" th:href="@{/CSS/grid.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/CSS/app.css}"/>
     <!-- preloader  -->
     <div id="preloader">
         <div class="status">&nbsp;</div>
@@ -10,10 +8,10 @@
         <div class="container">
             <div class="nav">
                 <a th:href="@{/}" class="logo">
-                    <i class='bx bx-movie-play bx-tada main-color'></i>ALLFOR<span class="main-color">ONE</span>x
+                    <i class='bx bx-movie-play bx-tada main-color'></i>ALLFOR<span class="main-color">ONE</span>
                 </a>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#">Home</a></li>
+                    <li><a th:href="@{/}">Home</a></li>
                     <li><a href="#">Genre</a></li>
                     <li><a href="#">Movies</a></li>
                     <li><a href="#">Series</a></li>

@@ -51,16 +51,6 @@ public class HomePageController {
         model.addAttribute("movies", movies);
         model.addAttribute("names", names);
         model.addAttribute("stars", starts);
-        System.out.println(movies);
-        System.out.println(names);
-        System.out.println(starts);
-        return "index";
-    }
-
-    @PostMapping("")
-    public String postHomePage(@ModelAttribute("mapMovie") Map<String, Movie> mapMovies,
-                               ModelMap modelMap) {
-
         return "index";
     }
 }

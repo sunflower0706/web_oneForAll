@@ -21,17 +21,10 @@ public class MovieController {
     @Autowired
     private MovieRepository movieRepository;
 
-    @Autowired
-    private GenreRepository genreRepository;
-
-    @Autowired
-    private MovieGenreRepository movieGenreRepository;
-
     @GetMapping(value = "/info/{name}/{id}")
     public String movieInfo(Model model,
                                    @PathVariable("id") int id){
         Movie movie = movieRepository.findById(id);
-
         String name = MovieNameImageUtil.nameImage(movie);
         model.addAttribute("movie", movie);
         model.addAttribute("name", name);

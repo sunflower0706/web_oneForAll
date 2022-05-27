@@ -5,35 +5,39 @@
 <head th:replace="fragments/header :: head">
 </head>
 <body>
-    <div th:replace="fragments/nav :: nav"></div>
-    <div layout:fragment="content">
+    <div layout:fragment="content" th:object="${account}">
         <link rel="stylesheet" th:href="@{/CSS/user.css}">
+        <div id="preloader">
+            <div class="status">&nbsp;</div>
+        </div>
         <input type="checkbox" id="nav-toggle">
         <div class="sidebar">
             <div class="sidebar-brand">
-                <h2><span class="lab la-youtube"></span><span>ALLFORONE</span></h2>
+                <a th:href="@{/}">
+                    <h2><span class="lab la-youtube"></span><span>ALLFORONE</span></h2>
+                </a>
             </div>
 
             <div class="sidebar-menu">
                 <ul>
                     <li>
-                        <a href=""><span class="las la-user-circle"></span>
+                        <a th:href="@{'/account/' + ${account.getId()}}"><span class="las la-user-circle"></span>
                             <span>Tài khoản</span></a>
                     </li>
                     <li>
-                        <a href="" class="active"><span class="las la-history"></span>
+                        <a th:href="@{'/account/'+ ${account.getId()} +'/history'}" class="active"><span class="las la-history"></span>
                             <span>Lịch sử</span></a>
                     </li>
                     <li>
-                        <a href=""><span class="las la-bookmark"></span>
+                        <a th:href="@{'/account/' + ${account.getId()} + '/later'}"><span class="las la-bookmark"></span>
                             <span>Bộ sưu tập</span></a>
                     </li>
                     <li>
-                        <a href=""><span class="las la-question-circle"></span>
+                        <a th:href="@{/}"><span class="las la-sign-out-alt"></span>
                             <span>Về web</span></a>
                     </li>
                     <li>
-                        <a href=""><span class="las la-sign-out-alt"></span>
+                        <a th:href="@{/account/logout}"><span class="las la-sign-out-alt"></span>
                             <span>Đăng xuất</span></a>
                     </li>
                 </ul>
@@ -55,7 +59,7 @@
                 </div>
 
                 <div class="user-wrapper">
-                    <img src="img/avt4.jpg" width="40px" height="40px" alt="">
+                    <img th:src="@{/images/avt4.jpg}" width="40px" height="40px" alt="">
                     <div>
                         <h4>Liluphuong</h4>
                         <small>User</small>
@@ -66,87 +70,87 @@
             <main>
                 <div class="film-grid">
                     <div class="film-card">
-                        <img class="card-img" src="img/wanda-banner.jpg" alt="">
+                        <img class="card-img" th:src="@{/images/wanda-banner.jpg}" alt="">
                         <div class="card-name">Wanda Doctor Strange</div>
                         <div class="card-total">Tập cuối</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/black-banner.png" alt="">
+                        <img class="card-img" th:src="@{/images/black-banner.png}" alt="">
                         <div class="card-name">Black Panther 2</div>
                         <div class="card-total">Tập 2</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/supergirl-banner.jpg" alt="">
+                        <img class="card-img" th:src="@{/images/supergirl-banner.jpg}" alt="">
                         <div class="card-name">Supergirl</div>
                         <div class="card-total">Tập 3</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>
                     <div class="film-card">
-                        <img class="card-img" src="img/transformer-banner.jpg   " alt="">
+                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
                         <div class="card-name">Transformer S</div>
                         <div class="card-total">Tập 4</div>
                     </div>

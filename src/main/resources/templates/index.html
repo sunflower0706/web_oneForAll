@@ -16,40 +16,41 @@
                         <th:block th:if="${i} < 5">
                             <!-- SLIDE ITEM -->
                             <div class="hero-slide-item">
-                                <img th:src="@{'/images/movies/' + ${names[i]} + '.jpg'}" alt="">
-                                <div class="overlay"></div>
-                                <div class="hero-slide-item-content">
-                                    <div class="item-content-wraper">
-                                        <div class="item-content-title top-down" th:text="${movies[i].getTen_phim()}">
-                                        </div>
-                                        <div class="movie-infos top-down delay-2">
-                                            <div class="movie-info">
-                                                <i class="bx bxs-star"></i>
-                                                <span th:text="${stars[i]}"></span>
-                                            </div>
-                                            <div class="movie-info">
-                                                <i class="bx bxs-time"></i>
-                                                <span th:text="${movies[i].getThoi_luong()}"></span>
-                                                <span>tập</span>
-                                            </div>
-                                            <div class="movie-info">
-                                                <span th:text="${movies[i].getChat_luong()}">HD</span>
-                                            </div>
-                                            <div class="movie-info">
-                                                <span>16+</span>
-                                            </div>
-                                        </div>
-                                        <div class="item-content-description top-down delay-4" th:text="${movies[i].getMo_ta()}">
-                                        </div>
-                                        <div class="item-action top-down delay-6">
-                                            <a th:href="@{'/movie/theatre/'+${names[i]}+'/'+${movies[i].getId()}}" class="btn btn-hover">
-                                                <i class="bx bxs-right-arrow"></i>
-                                                <span>Watch now</span>
+                                    <img th:src="@{'/images/movies/' + ${names[i]} + '.jpg'}" alt="">
+                                    <div class="overlay"></div>
+                                    <div class="hero-slide-item-content">
+                                        <div class="item-content-wraper">
+                                            <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i].getId()}}">
+                                                <div class="item-content-title top-down" th:text="${movies[i].getTen_phim()}"></div>
                                             </a>
+                                            <div class="movie-infos top-down delay-2">
+                                                <div class="movie-info">
+                                                    <i class="bx bxs-star"></i>
+                                                    <span th:text="${stars[i]}"></span>
+                                                </div>
+                                                <div class="movie-info">
+                                                    <i class="bx bxs-time"></i>
+                                                    <span th:text="${movies[i].getThoi_luong()}"></span>
+                                                    <span>tập</span>
+                                                </div>
+                                                <div class="movie-info">
+                                                    <span th:text="${movies[i].getChat_luong()}">HD</span>
+                                                </div>
+                                                <div class="movie-info">
+                                                    <span>16+</span>
+                                                </div>
+                                            </div>
+                                            <div class="item-content-description top-down delay-4" th:text="${movies[i].getMo_ta()}">
+                                            </div>
+                                            <div class="item-action top-down delay-6">
+                                                <a th:href="@{'/movie/theatre/'+${names[i]}+'/'+${movies[i].getId()}}" class="btn btn-hover">
+                                                    <i class="bx bxs-right-arrow"></i>
+                                                    <span>Watch now</span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             <!-- END SLIDE ITEM -->
                         </th:block>
                     </th:block>
@@ -62,7 +63,8 @@
                     <th:block th:each ="i:${#numbers.sequence(0, movies.size()-1, 1)}">
                         <th:block th:if="${i} < 10">
                             <!-- MOVIE ITEM -->
-                            <div class="movie-item">
+                            <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i].getId()}}">
+                                <div class="movie-item">
                                 <img th:src="@{'/images/movies/' + ${names[i]} + '.jpg'}" alt="">
                                 <div class="movie-item-content">
                                     <div class="movie-item-title" th:text="${movies[i].getTen_phim()}">
@@ -86,6 +88,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                             <!-- END MOVIE ITEM -->
                         </th:block>
                     </th:block>
@@ -105,7 +108,8 @@
                     <th:block th:each ="i:${#numbers.sequence(0, movies.size() - 1, 1)}">
                         <th:block th:if="${i} < 10">
                             <!-- MOVIE ITEM -->
-                            <div class="movie-item">
+                            <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i].getId()}}">
+                                <div class="movie-item">
                                 <img th:src="@{'/images/movies/' + ${names[i]} + '.jpg'}" alt="">
                                 <div class="movie-item-content">
                                     <div class="movie-item-title" th:text="${movies[i].getTen_phim()}">
@@ -129,6 +133,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                             <!-- END MOVIE ITEM -->
                         </th:block>
                     </th:block>
@@ -147,7 +152,8 @@
                     <th:block th:each ="i:${#numbers.sequence(0, movies.size() - 1, 1)}">
                         <th:block th:if="${i} < 10">
                             <!-- MOVIE ITEM -->
-                            <div class="movie-item">
+                            <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i].getId()}}">
+                                <div class="movie-item">
                                 <img th:src="@{'/images/movies/' + ${names[i]} + '.jpg'}" alt="">
                                 <div class="movie-item-content">
                                     <div class="movie-item-title" th:text="${movies[i].getTen_phim()}">
@@ -171,6 +177,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                             <!-- END MOVIE ITEM -->
                         </th:block>
                     </th:block>
@@ -189,7 +196,8 @@
                     <th:block th:each ="i:${#numbers.sequence(0, movies.size() - 1, 1)}">
                         <th:block th:if="${i} < 10">
                             <!-- MOVIE ITEM -->
-                            <div class="movie-item">
+                            <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i].getId()}}">
+                                <div class="movie-item">
                                 <img th:src="@{'/images/movies/' + ${names[i]} + '.jpg'}" alt="">
                                 <div class="movie-item-content">
                                     <div class="movie-item-title" th:text="${movies[i].getTen_phim()}">
@@ -213,6 +221,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                             <!-- END MOVIE ITEM -->
                         </th:block>
                     </th:block>

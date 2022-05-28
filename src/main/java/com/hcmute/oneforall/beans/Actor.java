@@ -22,6 +22,9 @@ public class Actor {
     @Column(name = "gioi_tinh")
     private boolean gioi_tinh;
 
+    @OneToMany(mappedBy = "actor")
+    private Set<MovieCast> movieCasts;
+
     public Actor(){}
 
     public Actor(int id, String ho, String ten, boolean gioi_tinh){

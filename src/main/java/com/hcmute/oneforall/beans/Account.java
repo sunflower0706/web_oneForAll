@@ -25,7 +25,6 @@ public class Account {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "ngay_sinh")
-    @Getter
     private Date ngay_sinh;
 
     @Column(name = "email")
@@ -42,6 +41,9 @@ public class Account {
 
     @Column(name = "phan_quyen")
     private boolean phan_quyen;
+
+    @OneToMany(mappedBy = "account")
+    private Set<Rating> ratings;
 
     public Account(){}
 

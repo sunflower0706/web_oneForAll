@@ -1,6 +1,7 @@
 package com.hcmute.oneforall.beans;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "director")
@@ -15,6 +16,9 @@ public class Director {
 
     @Column(name = "ten")
     private String ten;
+
+    @OneToMany(mappedBy = "director")
+    private Set<MovieDirector> movieDirectors;
 
     public Director(){}
 

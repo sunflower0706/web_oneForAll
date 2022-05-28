@@ -1,51 +1,42 @@
 package com.hcmute.oneforall.beans;
 
+import com.hcmute.oneforall.key.MovieGenreKey;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "movie_genre")
 public class MovieGenre {
-    @Id
+    @EmbeddedId
     @Column(name = "idMG")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private MovieGenreKey id;
 
-    @Column(name = "idGR")
-    private int idGR;
+    @ManyToOne
+    @MapsId("idGR")
+    @JoinColumn(name = "idGR")
+    private Genre genre;
 
-    @Column(name = "idMV")
-    private int idMV;
+    @ManyToOne
+    @MapsId("idMV")
+    @JoinColumn(name = "idMV")
+    private Movie movie;
 
-    public MovieGenre(){}
 
-    public MovieGenre(int id, int idGR, int idMV){
-        this.id = id;
-        this.idGR = idGR;
-        this.idMV = idMV;
-    }
-
-    public void setId(int id) {
+    public void setId(MovieGenreKey id) {
         this.id = id;
     }
 
-    public int getId() {
+    public MovieGenreKey getId() {
         return id;
-    }
-
-    public int getIdGR() {
-        return idGR;
-    }
-
-    public int getIdMV() {
-        return idMV;
     }
 
     @Override
     public String toString() {
         return "MovieGenre{" +
                 "id=" + id +
-                ", idGR=" + idGR +
-                ", idMV=" + idMV +
+                ", genre=" + genre +
+                ", movie=" + movie +
                 '}';
     }
 }

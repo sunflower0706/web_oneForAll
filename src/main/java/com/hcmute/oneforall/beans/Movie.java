@@ -31,9 +31,24 @@ public class Movie {
     @Column(name = "mo_ta")
     private String mo_ta;
 
+    @Column(name = "link_phim")
+    private String link_phim;
+
+    @OneToMany(mappedBy = "movie")
+    private Set<MovieCast> movieCasts;
+
+    @OneToMany(mappedBy = "movie")
+    private Set<MovieDirector> movieDirectors;
+
+    @OneToMany(mappedBy = "movie")
+    private Set<MovieGenre> movieGenres;
+
+    @OneToMany(mappedBy = "movie")
+    private Set<Rating> ratings;
+
     public Movie(){}
 
-    public Movie(int id, String ten_phim, String nam, String chat_luong, String quoc_gia, int thoi_luong, String mo_ta){
+    public Movie(int id, String ten_phim, String nam, String chat_luong, String quoc_gia, int thoi_luong, String mo_ta, String link_phim){
         this.id = id;
         this.ten_phim = ten_phim;
         this.nam = nam;
@@ -41,6 +56,7 @@ public class Movie {
         this.quoc_gia = quoc_gia;
         this.thoi_luong = thoi_luong;
         this.mo_ta = mo_ta;
+        this.link_phim = link_phim;
     }
 
     public void setId(int id) {
@@ -97,6 +113,14 @@ public class Movie {
 
     public String getMo_ta() {
         return mo_ta;
+    }
+
+    public void setLink_phim(String link_phim) {
+        this.link_phim = link_phim;
+    }
+
+    public String getLink_phim() {
+        return link_phim;
     }
 
     @Override

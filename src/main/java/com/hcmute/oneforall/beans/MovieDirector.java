@@ -1,47 +1,42 @@
 package com.hcmute.oneforall.beans;
 
+import com.hcmute.oneforall.key.MovieCastKey;
+import com.hcmute.oneforall.key.MovieDirectorKey;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "movie_director")
 public class MovieDirector {
-    @Id
+    @EmbeddedId
     @Column(name = "idMD")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private MovieDirectorKey id;
 
-    @Column(name = "idDT")
-    private int idDT;
+    @ManyToOne
+    @MapsId("idDT")
+    @JoinColumn(name = "idDT")
+    private Director director;
 
-    @Column(name = "idMV")
-    private int idMV;
+    @ManyToOne
+    @MapsId("idMV")
+    @JoinColumn(name = "idMV")
+    private Movie movie;
 
-    public MovieDirector(){}
-
-    public MovieDirector(int id, int idDT, int idMV){
-        this.id = id;
-        this.idDT = idDT;
-        this.idMV = idMV;
-    }
-
-    public void setId(int id) {
+    public void setId(MovieDirectorKey id) {
         this.id = id;
     }
 
-    public int getIdMV() {
-        return idMV;
-    }
-
-    public int getIdDT() {
-        return idDT;
+    public MovieDirectorKey getId() {
+        return id;
     }
 
     @Override
     public String toString() {
         return "MovieDirector{" +
                 "id=" + id +
-                ", idDT=" + idDT +
-                ", idMV=" + idMV +
+                ", director=" + director +
+                ", movie=" + movie +
                 '}';
     }
 }

@@ -216,7 +216,7 @@ main {
 }
 
 .user-info-container {
-    height: 111px;
+    height: 100%;
     background: #000000;
     display: flex;
     align-items: center;
@@ -242,7 +242,7 @@ main {
 }
 
 .account-info-container {
-    height: 10rem;
+    height: 100%;
     background: #000000;
     border-radius: 6px;
 }
@@ -311,6 +311,52 @@ main {
 .film-card:hover .card-name,
 .film-card:hover .card-total {
     color: #fff;
+}
+
+.account-info-container .input_box{
+    display: flex;
+    align-items: center;
+    padding: 24px 15px;
+}
+
+.input_box .rectangle{
+    height: 35px;
+    width: 40%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    border-bottom-width: 2px;
+}
+
+.input_box .rectangle:focus{
+    border-color: var(--main-color);
+}
+
+.input_box .cicrle{
+    margin-left: 2%;
+}
+
+.input_box span {
+    width: 15%;
+}
+
+.account_info {
+    padding-bottom: 30px;
+}
+
+.action{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action .button input{
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;
+    width: 80px;
+    outline: none;
 }
 
 @media only screen and (max-width: 1200px) {

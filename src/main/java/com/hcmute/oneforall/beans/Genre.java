@@ -1,6 +1,7 @@
 package com.hcmute.oneforall.beans;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "genres")
@@ -12,6 +13,9 @@ public class Genre {
 
     @Column(name = "mo_ta")
     private String mo_ta;
+
+    @OneToMany(mappedBy = "genre")
+    private Set<MovieGenre> movieGenres;
 
     public Genre(){}
 

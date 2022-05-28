@@ -11,14 +11,6 @@
         <th:block th:object="${movie}">
             <div class="app">
             <div class ="container">
-                <div class="navbar">
-                    <ul class="navbar-list">
-                        <li class="navbar-list-item">Xem Phim ></li>
-                        <li class="navbar-list-item">Phim Hành Động ></li>
-                        <li class="navbar-list-item">Phim Viễn Tưởng ></li>
-                        <li class="navbar-list-item">Wanda Doctor Strange</li>
-                    </ul>
-                </div>
                 <div class="padding"></div>
                 <th:block th:object="${name}">
                     <div class="banner" th:style="'background: url(/images/movies/'+${name}+'.jpg); background-size: 100% 100%;'">
@@ -29,7 +21,7 @@
                                 </h1>
                                 <div class="banner-btn" >
                                     <a href="#" class="button banner-btn-trailer">Trailer</a>
-                                    <a th:href="@{'/movie/theatre/'+${name}+'/'+${movie.getId()}}" class="button banner-btn-see">Xem phim</a>
+                                    <a th:href="@{'/movie/theatre/'+${name}+' tap 1/'+${movie.getId()}}" class="button banner-btn-see">Xem phim</a>
                                 </div>
                             </div>
                         </div>
@@ -42,10 +34,11 @@
                     </th:block>
                     <th:block th:if="${ep} > 1">
                         <span>Tập mới nhất:</span>
+                        </br>
                         <th:block  th:each="i:${#numbers.sequence(1, ep, 1)}">
-                            <a href="#" class="button btn-episode" th:text="'Tập '+${i}"></a>
+                            <a th:href="@{'/movie/theatre/' + ${name}+ ' tap ' + ${i} +'/'+${movie.getId()}}" class="button btn-episode" th:text="'Tập ' + ${i}"></a>
                         </th:block>
-                        <a href="#" class="button btn-episode">Tập Cuối</a>
+                        <a th:href="@{'/movie/theatre/' + ${name}+ ' tap cuoi/'+${movie.getId()}}" class="button btn-episode">Tập Cuối</a>
                     </th:block>
                 </div>
                 <div class="padding"></div>
@@ -64,12 +57,12 @@
                     </div>
                     <ul class="info">
                         <li class = "item_info"><label>Đang phát: </label> <span><font color="red" th:text="${movie.getChat_luong()}"></font></span></li>
-                        <li class = "item_info"><label>Năm phát hành: </label><a href="#" th:text="${movie.getNam()}"></a></li>
-                        <li class = "item_info"><label>Quốc gia: </label><a href="#" th:text="${movie.getQuoc_gia()}"></a></li>
-                        <li class = "item_info"><label>Thể loại: </label><a href="#">Phim Viễn Tưởng, Phim Hành Động</a></li>
-                        <li class = "item_info"><label>Đạo diễn: </label><span>None</span></li>
+                        <li class = "item_info"><label>Năm phát hành: </label><span th:text="${movie.getNam()}"></span></li>
+                        <li class = "item_info"><label>Quốc gia: </label><span th:text="${movie.getQuoc_gia()}"></span></li>
+                        <li class = "item_info"><label>Thể loại: </label><span th:text="${genres}"></span></li>
+                        <li class = "item_info"><label>Đạo diễn: </label><span th:text="${directors}"></span></li>
                         <li class = "item_info"><label>Thời lượng: </label><span th:text="${movie.getThoi_luong()}+' Tập'"></span></li>
-                        <li class = "item_info"><label>Diễn viên: </label><span>None</span></li>
+                        <li class = "item_info"><label>Diễn viên: </label><span th:text="${actors}"></span></li>
                     </ul>
                 </div>
                 <div class="padding"></div>

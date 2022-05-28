@@ -1,47 +1,36 @@
 package com.hcmute.oneforall.beans;
 
+import com.hcmute.oneforall.key.RatingKey;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "ratings")
 public class Rating {
-    @Id
+    @EmbeddedId
     @Column(name = "idRT")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private RatingKey id;
 
-    @Column(name = "idTK")
-    private int idTK;
+    @ManyToOne
+    @MapsId("idMV")
+    @JoinColumn(name = "idMV")
+    private Movie movie;
 
-    @Column(name = "idMV")
-    private int idMV;
+    @ManyToOne
+    @MapsId("idTK")
+    @JoinColumn(name = "idTK")
+    private Account account;
 
     @Column(name = "sao")
     private int sao;
 
-    public Rating(){}
-
-    public Rating(int id, int idTK, int idMV, int sao){
-        this.id = id;
-        this.idTK = idTK;
-        this.idMV = idMV;
-        this.sao = sao;
-    }
-
-    public void setId(int id) {
+    public void setId(RatingKey id) {
         this.id = id;
     }
 
-    public int getId() {
+    public RatingKey getId() {
         return id;
-    }
-
-    public int getIdTK() {
-        return idTK;
-    }
-
-    public int getIdMV() {
-        return idMV;
     }
 
     public void setSao(int sao) {
@@ -56,8 +45,8 @@ public class Rating {
     public String toString() {
         return "Rating{" +
                 "id=" + id +
-                ", idTK=" + idTK +
-                ", idMV=" + idMV +
+                ", movie=" + movie +
+                ", account=" + account +
                 ", sao=" + sao +
                 '}';
     }

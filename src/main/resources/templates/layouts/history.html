@@ -26,11 +26,7 @@
                     </li>
                     <li>
                         <a th:href="@{'/account/'+ ${account.getId()} +'/history'}" class="active"><span class="las la-history"></span>
-                            <span>Lịch sử</span></a>
-                    </li>
-                    <li>
-                        <a th:href="@{'/account/' + ${account.getId()} + '/later'}"><span class="las la-bookmark"></span>
-                            <span>Bộ sưu tập</span></a>
+                            <span>Sửa thông tin</span></a>
                     </li>
                     <li>
                         <a th:href="@{/}"><span class="las la-sign-out-alt"></span>
@@ -68,91 +64,56 @@
             </header>
 
             <main>
-                <div class="film-grid">
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/wanda-banner.jpg}" alt="">
-                        <div class="card-name">Wanda Doctor Strange</div>
-                        <div class="card-total">Tập cuối</div>
+                <div class="account_info">
+                    <div class="account-info-title">
+                        Thông tin cá nhân
                     </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/black-banner.png}" alt="">
-                        <div class="card-name">Black Panther 2</div>
-                        <div class="card-total">Tập 2</div>
+                    <div class="account-info-container">
+                        <div class="input_box">
+                            <span class="details">Tên người dùng: </span>
+                            <input class="rectangle" type="text" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input_box">
+                            <span class="details">Giới tính: </span>
+                            <input class="cicrle" type="radio" name="gender">Nam
+                            <input class="cicrle" type="radio" name="gender">Nữ
+                        </div>
+                        <div class="input_box">
+                            <span class="details">Sinh nhật: </span>
+                            <input class="rectangle" type="date">
+                        </div>
                     </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/supergirl-banner.jpg}" alt="">
-                        <div class="card-name">Supergirl</div>
-                        <div class="card-total">Tập 3</div>
+                </div>
+                <div class="account_info">
+                    <div class="account-info-title">
+                        Tài khoản và bảo mật
                     </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
+                    <div class="account-info-container">
+                        <div class="input_box">
+                            <span class="details">Email: </span>
+                            <input class="rectangle" type="text" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input_box">
+                            <span class="details">Số điện thoại: </span>
+                            <input class="rectangle" type="text" placeholder="Enter your phone" required>
+                        </div>
+                        <div class="input_box">
+                            <span class="details">Mật khẩu: </span>
+                            <input class="rectangle" type="text" placeholder="Enter your password" required>
+                        </div>
+                        <div class="input_box">
+                            <span class="details">Nhập lại mật khẩu: </span>
+                            <input class="rectangle" type="text" placeholder="Confirm your password" required>
+                        </div>
                     </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
+                </div>
+
+                <div class="action">
+                    <div class="button">
+                        <input type="submit" class="button_cancel" value="HỦY">
                     </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
-                    </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
-                    </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
-                    </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
-                    </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
-                    </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
-                    </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
-                    </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
-                    </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
-                    </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
-                    </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
-                    </div>
-                    <div class="film-card">
-                        <img class="card-img" th:src="@{/images/transformer-banner.jpg}" alt="">
-                        <div class="card-name">Transformer S</div>
-                        <div class="card-total">Tập 4</div>
+                    <div class="button">
+                        <input type="submit" class="button_save" value="LƯU">
                     </div>
                 </div>
             </main>

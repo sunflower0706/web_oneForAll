@@ -3,7 +3,6 @@ package com.hcmute.oneforall.controller;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.hcmute.oneforall.beans.Account;
 import com.hcmute.oneforall.repositories.AccountRepository;
-import com.hcmute.oneforall.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,20 +27,12 @@ public class LoginController {
 		return "layouts/account";
 	}
 
-	@GetMapping(value = "/{id}/history")
+	@GetMapping(value = "/{id}/edit")
 	public String history(Model model,
 						  @PathVariable("id") int id){
 		Account account = accountRepository.findById(id);
 		model.addAttribute("account", account);
-		return "layouts/history";
-	}
-
-	@GetMapping(value = "/{id}/later")
-	public String watchLater(Model model,
-									@PathVariable("id") int id){
-		Account account = accountRepository.findById(id);
-		model.addAttribute("account", account);
-		return "layouts/watchLater";
+		return "layouts/editAccount";
 	}
 
 	@GetMapping(value = "/login")

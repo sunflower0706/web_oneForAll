@@ -77,6 +77,11 @@ body {
     padding-top: var(--nav-height);
 }
 
+.user-wrapper {
+    display: flex;
+    align-items: center;
+}
+
 a {
     text-decoration: none;
     color: unset;

@@ -27,6 +27,9 @@ public interface MovieRepository extends JpaRepository<Movie, Integer> {
             "FROM Rating r GROUP BY r.movie.id")
     public ArrayList<Object[]> findAllMovieWithRating();
 
+    @Query(value = "SELECT mg.movie.id ,mg.movie.ten_phim, mg.genre.mo_ta FROM MovieGenre mg")
+    public ArrayList<Object[]> findAllMovieWithGenre();
+
     @Query(value = "SELECT mg.genre.mo_ta FROM MovieGenre mg WHERE mg.movie.id = ?1")
     public ArrayList<String> findGenres(int id);
 

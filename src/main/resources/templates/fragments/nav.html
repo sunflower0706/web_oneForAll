@@ -17,13 +17,19 @@
                     <li><a href="#">Series</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Top Movie</a></li>
-                    <li th:if="${session.auth} != true">
+                    <li th:if="${session.auth} == true">
                         <a th:href="@{/account/login}" class="btn btn-hover">
                             <span>Sign in</span>
                         </a>
                     </li>
-                    <li th:if="${session.auth} == true">
-
+                    <li th:if="${session.auth} != true">
+                        <div class="user-wrapper">
+                            <img th:src="@{/images/avt4.jpg}" width="40px" height="40px" alt="">
+                            <div>
+                                <h4 th:text="test"></h4>
+                                <small>User</small>
+                            </div>
+                        </div>
                     </li>
 <!--                    <div class="search">-->
 <!--                        <input type="text" class="input" placeholder="Search...">-->

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/admin")
@@ -34,16 +36,26 @@ public class AdminController {
                             @PathVariable("id") int id){
         Account account = accountRepository.findById(id);
         ArrayList<Account> accounts = accountRepository.findAll();
-        ArrayList<Movie> movies = movieRepository.findAll();
-        ArrayList<Genre> genres = new ArrayList<>();
+        ArrayList<Object[]> movieGenres = movieRepository.findAllMovieWithGenre();
 
-        for (Movie movie : movies){
-            genres.add(genreRepository.findById(movie.getId()));
+        Map<Integer, String[]> movieWithGenre = new HashMap<>();
+
+        for (Object[] movie : movieGenres){
+            int idMV = Integer.parseInt(movie[0].toString());
+            if (!movieWithGenre.containsKey(idMV)){
+                movieWithGenre.put(idMV, new String[]{"",""});
+            }
+            String name = movie[1].toString();
+            String genre = movie[2].toString();
+            if (!movieWithGenre.get(idMV)[1].toString().equals("")){
+                genre = movieWithGenre.get(idMV)[1] + ", " + movie[2].toString();
+            }
+            String[] nameAndGenre = {name, genre};
+            movieWithGenre.put(idMV, nameAndGenre);
         }
 
         model.addAttribute("accounts", accounts);
-        model.addAttribute("movies", movies);
-        model.addAttribute("genres", genres);
+        model.addAttribute("movies", movieWithGenre);
         model.addAttribute("admin", account);
 
         return "layouts/dashBoard";

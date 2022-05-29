@@ -23,9 +23,9 @@
                         <th:block th:if="${ep} > 1">
                             <h3>Danh Sách Tập: </h3>
                             <th:block  th:each="i:${#numbers.sequence(1, ep, 1)}">
-                                <a th:href="@{'/movie/theatre/' + ${name}+ ' tap ' + ${i} +'/'+${movie.getId()}}" class="button btn-episode" th:text="'Tập '+${i}"></a>
+                                <a th:href="@{'/movie/theatre/' + ${movie.ten_phim}+ ' tap ' + ${i} +'/'+${movie.getId()}}" class="button btn-episode" th:text="'Tập ' + ${i}"></a>
                             </th:block>
-                            <a th:href="@{'/movie/theatre/' + ${name}+ ' tap cuoi/'+${movie.getId()}}" class="button btn-episode">Tập Cuối</a>
+                            <a th:href="@{'/movie/theatre/' + ${movie.ten_phim}+ ' tap cuoi/'+${movie.getId()}}" class="active button btn-episode">Tập Cuối</a>
                         </th:block>
                     </div>
                     <div class="padding"></div>

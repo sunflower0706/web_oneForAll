@@ -110,10 +110,10 @@
                                             <td>Thể loại</td>
                                         </tr>
                                         </thead>
-                                        <tbody th:each="i:${#numbers.sequence(0, movies.size()-1)}">
+                                        <tbody th:each="movie, state :${movies}" th:if="${state.index}<5">
                                             <tr>
-                                                <td th:text="${movies[i].getTen_phim()}"></td>
-                                                <td th:text="${genres[i].getMo_ta()}"></td>
+                                                <td th:text="${movie.value[0]}"></td>
+                                                <td th:text="${movie.value[1]}"></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -128,7 +128,7 @@
                                 <button>See all <span class="las la-arrow-right">
                                 </span></button>
                             </div>
-                            <div class="card-body" th:each="account:${accounts}">
+                            <div class="card-body" th:each="account, state :${accounts}" th:if="${state.index} < 5">
                                 <div class="user">
                                     <div class="info-basic">
                                         <img th:src="@{/images/avt5.jpg}" width="40px" height="40px" alt="">

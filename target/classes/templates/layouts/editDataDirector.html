@@ -16,28 +16,28 @@
             <div class="sidebar-menu">
                 <ul>
                     <li>
-                        <a th:href="@{'/admin/' + ${admin.getId()}}"><span class="las la-igloo"></span>
-                            <span>Bảng điều khiển</span></a>
+                        <a href=""><span class="las la-igloo"></span>
+                        <span>Bảng điều khiển</span></a>
                     </li>
                     <li>
-                        <a th:href="@{'/admin/' + ${admin.getId()} + '/data'}" class="active"><span class="las la-box"></span>
-                            <span>Quản lý dữ liệu</span></a>
+                        <a href="" class="active"><span class="las la-box"></span>
+                        <span>Quản lý dữ liệu</span></a>
                     </li>
                     <li>
-                        <a th:href="@{'/admin/' + ${admin.getId()} + '/users'}"><span class="las la-users"></span>
-                            <span>Người dùng</span></a>
+                        <a href=""><span class="las la-users"></span>
+                        <span>Người dùng</span></a>
                     </li>
                     <li>
-                        <a th:href="@{'/admin/' + ${admin.getId()} + '/film'}"><span class="las la-file-video"></span>
-                            <span>Film</span></a>
+                        <a href=""><span class="las la-file-video"></span>
+                        <span>Film</span></a>
                     </li>
                     <li>
-                        <a th:href="@{/}"><span class="las la-question-circle"></span>
-                            <span>Về web</span></a>
+                        <a href=""><span class="las la-question-circle"></span>
+                        <span>Về web</span></a>
                     </li>
                     <li>
-                        <a th:href="@{/account/logout}"><span class="las la-sign-out-alt"></span>
-                            <span>Đăng xuất</span></a>
+                        <a href=""><span class="las la-sign-out-alt"></span>
+                        <span>Đăng xuất</span></a>
                     </li>
                 </ul>
             </div>
@@ -69,14 +69,18 @@
             <main>
                 <div class="card">
                     <div class="card-header">
-                        <h3>Thêm thể loại</h3>
+                        <h3>Thêm đạo diễn</h3>
                         <button>Add <span class="las la-plus">
                                     </span></button>
                     </div>
                     <div class="card-body">
                         <div class="input_box">
-                            <span class="details">Thể loại: </span>
-                            <input class="rectangle" type="text" placeholder="Enter your description" required>
+                            <span class="details">Họ: </span>
+                            <input class="rectangle" type="text" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="input_box">
+                            <span class="details">Tên: </span>
+                            <input class="rectangle" type="text" placeholder="Enter your last name" required>
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,6 @@ import com.hcmute.oneforall.repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,26 +20,37 @@ public class LoginController {
 
 	@GetMapping(value = "/{id}")
 	public String account(Model model,
-						  @PathVariable("id") int id){
-		Account account = accountRepository.findById(id);
-		model.addAttribute("account", account);
-		return "layouts/account";
+						  @PathVariable("id") int id,
+						  HttpSession session){
+		if(session.getAttribute("auth") != null){
+			Account account = accountRepository.findById(id);
+			model.addAttribute("account", account);
+
+			return "layouts/account";
+		}
+
+		return "redirect:/404";
 	}
 
 	@GetMapping(value = "/{id}/edit")
 	public String getEditAccount(Model model,
-							 @PathVariable("id") int id){
-		Account account = accountRepository.findById(id);
-		model.addAttribute("account", account);
+								 @PathVariable("id") int id,
+								 HttpSession session){
+		if(session.getAttribute("auth") != null){
+			System.out.println(session.getAttribute("authAcc"));
+			Account account = accountRepository.findById(id);
+			model.addAttribute("account", account);
 
-		return "layouts/editAccount";
+			return "layouts/editAccount";
+		}
+
+		return "redirect:/404";
 	}
 
 	@PostMapping(value = "/{id}/edit")
-	public String postEditAccount(Model model,
-							  @ModelAttribute("account") Account account,
-							  @PathVariable("id") int id, HttpServletRequest request){
-		HttpSession session = request.getSession();
+	public String postEditAccount(@ModelAttribute("account") Account account,
+								  @PathVariable("id") int id,
+								  Model model){
 		Account authAcc = accountRepository.findById(id);
 		String mat_khau = Objects.requireNonNull(account.getMat_khau());
 		BCrypt.Result result = BCrypt.verifyer().verify(mat_khau.toCharArray(), authAcc.getMat_khau());
@@ -53,12 +63,12 @@ public class LoginController {
 					account.getEmail(),
 					account.getSdt()
 			);
-			session.setAttribute("success", true);
+			model.addAttribute("success", true);
 		}else {
-			session.setAttribute("success", true);
+			model.addAttribute("success", false);
 		}
 
-		return "redirect:/account/" + id +"/edit";
+		return "layouts/editAccount";
 	}
 
 	@GetMapping(value = "/login")
@@ -71,13 +81,13 @@ public class LoginController {
 			return "layouts/login";
 		}
 
-		return "redirect:/";
+		return "redirect:/404";
 	}
 
 	@PostMapping(value = "/login")
 	public String login(@ModelAttribute("account") Account account,
 						@RequestParam(value = "confirmPassword", required = false) String confirmPassword,
-						ModelMap modelMap,
+						Model model,
 						HttpServletRequest request){
 		String password = Objects.requireNonNull(account.getMat_khau());
 		HttpSession session = request.getSession();
@@ -97,39 +107,47 @@ public class LoginController {
 				return "redirect:/account/" + id + "/edit";
 			}
 
-			return "redirect:/account/login";
+			return "layouts/login";
 		}
 
 		//	login
 		if (authAcc != null){
 			BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), authAcc.getMat_khau());
 			if (result.verified) {
-				setSession(session, account);
+				setSession(session, authAcc);
 
 				return "redirect:/";
 			} else {
-				request.setAttribute("hasError", true);
-				return "redirect:/account/login";
+				model.addAttribute("hasError", true);
+				return "layouts/login";
 			}
 		}
 
-		request.setAttribute("hasError", true);
-		return "redirect:/account/login";
+		model.addAttribute("hasError", true);
+		return "layouts/login";
 	}
 
 	@GetMapping(value = "/logout")
-	public String logout(HttpServletRequest request){
-		endSession(request.getSession());
+	public String logout(HttpSession session){
+		endSession(session);
 		return "redirect:/";
 	}
 
 	private void setSession(HttpSession session, Account account){
 		session.setAttribute("auth", true);
 		session.setAttribute("authAcc", account);
+		session.setAttribute("id", account.getId());
+		session.setAttribute("ho", account.getHo());
+		session.setAttribute("ten", account.getTen());
+		session.setAttribute("role", account.isPhan_quyen());
 	}
 
 	private void endSession(HttpSession session){
 		session.setAttribute("auth", null);
 		session.setAttribute("authAcc", null);
+		session.setAttribute("id", null);
+		session.setAttribute("ho", null);
+		session.setAttribute("ten", null);
+		session.setAttribute("role", null);
 	}
 }

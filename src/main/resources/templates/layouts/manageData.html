@@ -33,7 +33,7 @@
                             <span>Người dùng</span></a>
                     </li>
                     <li>
-                        <a th:href="@{/}"><span class="las la-file-video"></span>
+                        <a th:href="@{'/admin/' + ${admin.getId()} + '/film'}"><span class="las la-file-video"></span>
                             <span>Film</span></a>
                     </li>
                     <li>
@@ -78,9 +78,9 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h3>Danh sách diễn viên</h3>
-                                    <button>Add
-                                        <span class="las la-plus"></span>
-                                    </button>
+                                    <a th:href="@{'/admin/' + ${admin.getId()} + '/data/edit/actor'}">
+                                        <button>Add<span class="las la-plus"></span></button>
+                                    </a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -108,8 +108,9 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h3>Danh sách đạo diễn</h3>
-                                    <button>Add <span class="las la-plus">
-                                    </span></button>
+                                    <a th:href="@{'/admin/' + ${admin.getId()} + '/data/edit/director'}">
+                                        <button>Add <span class="las la-plus"></span></button>
+                                    </a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -137,8 +138,9 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h3>Danh sách thể loại</h3>
-                                    <button>Add <span class="las la-plus">
-                                    </span></button>
+                                    <a th:href="@{'/admin/' + ${admin.getId()} + '/data/edit/genre'}">
+                                        <button>Add<span class="las la-plus"></span></button>
+                                    </a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">

@@ -4,11 +4,11 @@
   <head>
     <meta charset="utf-8">
     <title>All for One</title>
-    <link rel="stylesheet" th:href="@{/CSS/style.css}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/CSS/login.css}">
   </head>
   <body>
+    <div id="hasError" th:text="${hasError}" hidden></div>
     <div class="wrapper">
       <div class="title-text">
         <div class="title login">Login Form</div>
@@ -19,7 +19,7 @@
           <input type="radio" name="slide" id="login" checked>
           <input type="radio" name="slide" id="signup">
           <label for="login" class="slide login">Login</label>
-          <label th:action="@{/account/signup}" for="signup" class="slide signup">Signup</label>
+          <label for="signup" class="slide signup">Signup</label>
           <div class="slider-tab"></div>
         </div>
         <div class="form-inner">
@@ -35,7 +35,7 @@
               <div class="btn-layer"></div>
               <input type="submit" value="Login">
             </div>
-            <div class="signup-link">Not a member? <a th:href="@{/signup}">Signup now</a></div>
+            <div class="signup-link">Not a member? <a href="">Signup now</a></div>
           </form>
           <form th:action="@{/account/login}" th:object="${account}" method="post" class="signup" id="signupForm" onsubmit="submitForm(event)">
             <div class="field">

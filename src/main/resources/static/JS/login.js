@@ -3,6 +3,7 @@ const loginForm = document.querySelector("form.login");
 const loginBtn = document.querySelector("label.login");
 const signupBtn = document.querySelector("label.signup");
 const signupLink = document.querySelector("form .signup-link a");
+const hasError = document.querySelector("#hasError");
 
 function submitForm(event){
     if (document.getElementById('signupPass').value !== document.getElementById('confirmPass').value){
@@ -19,6 +20,13 @@ function check() {
         document.getElementById('message').innerHTML = 'matching';
     }
 }
+
+document.addEventListener("DOMContentLoaded", function (){
+    if (hasError.innerHTML === 'true'){
+        hasError.innerHTML = 'false';
+        window.alert("SAI MẬT KHẨU HOẶC EMAIL KHÔNG TỒN TẠI");
+    }
+}, false)
 
 signupBtn.onclick = (()=>{
     loginForm.style.marginLeft = "-50%";

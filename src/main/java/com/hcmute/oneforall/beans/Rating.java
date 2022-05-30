@@ -1,7 +1,6 @@
 package com.hcmute.oneforall.beans;
 
 import com.hcmute.oneforall.key.RatingKey;
-
 import javax.persistence.*;
 
 @Entity

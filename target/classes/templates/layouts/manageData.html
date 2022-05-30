@@ -78,9 +78,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h3>Danh sách diễn viên</h3>
-                                    <button>Add
-                                        <span class="las la-plus"></span>
-                                    </button>
+                                    <button th:href="@{'/admin/' + ${admin.getId()} + '/data/edit/actor'}">Add<span class="las la-plus"></span></button>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -108,8 +106,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h3>Danh sách đạo diễn</h3>
-                                    <button>Add <span class="las la-plus">
-                                    </span></button>
+                                    <button th:href="@{'/admin/' + ${admin.getId()} + '/data/edit/director'}">Add <span class="las la-plus"></span></button>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -137,8 +134,9 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h3>Danh sách thể loại</h3>
-                                    <button>Add <span class="las la-plus">
-                                    </span></button>
+                                    <a th:href="@{'/admin/' + ${admin.getId()} + '/data/edit/genre'}">
+                                        <button>Add<span class="las la-plus"></span></button>
+                                    </a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">

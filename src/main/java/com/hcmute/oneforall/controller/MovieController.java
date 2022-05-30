@@ -24,18 +24,22 @@ public class MovieController {
     public String movieInfo(Model model,
                                    @PathVariable("id") int id){
         Movie movie = movieRepository.findById(id);
-        String name = MovieNameImageUtil.nameImage(movie.getTen_phim());
-        ArrayList<String> genres = movieRepository.findGenres(id);
-        ArrayList<String> directors = movieRepository.findDirector(id);
-        ArrayList<String> actors = movieRepository.findActors(id);
+        if (movie != null){
+            String name = MovieNameImageUtil.nameImage(movie.getTen_phim());
+            ArrayList<String> genres = movieRepository.findGenres(id);
+            ArrayList<String> directors = movieRepository.findDirector(id);
+            ArrayList<String> actors = movieRepository.findActors(id);
 
-        model.addAttribute("movie", movie);
-        model.addAttribute("genres", ArrayToString.arrToString(genres));
-        model.addAttribute("directors", ArrayToString.arrToString(directors));
-        model.addAttribute("actors", ArrayToString.arrToString(actors));
-        model.addAttribute("name", name);
+            model.addAttribute("movie", movie);
+            model.addAttribute("genres", ArrayToString.arrToString(genres));
+            model.addAttribute("directors", ArrayToString.arrToString(directors));
+            model.addAttribute("actors", ArrayToString.arrToString(actors));
+            model.addAttribute("name", name);
 
-        return "layouts/movieInfo";
+            return "layouts/movieInfo";
+        }
+
+        return "redirect:/404";
     }
 
 
@@ -47,7 +51,7 @@ public class MovieController {
         Movie movie = movieRepository.findById(id);
         String[] names = name.split(" ");
         String[] linkPhims = movie.getLink_phim().split(";");
-        String linkPhim = "";
+        String linkPhim;
         int ep = 0;
         if (!Objects.equals(names[names.length - 1], "cuoi")){
             ep = Integer.parseInt(names[names.length-1]);
@@ -63,6 +67,6 @@ public class MovieController {
             return "layouts/movieTheatre";
         }
 
-        return "404";
+        return "redirect:/404";
     }
 }

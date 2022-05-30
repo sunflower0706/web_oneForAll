@@ -1,6 +1,5 @@
 package com.hcmute.oneforall.beans;
 
-import lombok.Getter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -48,11 +47,6 @@ public class Account {
     private Set<Rating> ratings;
 
     public Account(){}
-
-    public Account(String email, String mat_khau){
-        this.email = email;
-        this.mat_khau = mat_khau;
-    }
 
     public Account(int id, String ho, String ten, boolean gioi_tinh, Date ngay_sinh, String email, String mat_khau, String sdt, String avt, boolean phan_quyen){
         this.id = id;

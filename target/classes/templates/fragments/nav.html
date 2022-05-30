@@ -21,26 +21,31 @@
                     <li><a href="#">Series</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Top Movie</a></li>
-                    <li th:if="${session.auth} == true">
+                    <li th:if="${session.auth} != true">
                         <a th:href="@{/account/login}" class="btn btn-hover">
                             <span>Sign in</span>
                         </a>
                     </li>
-                    <li th:if="${session.auth} != true">
-                        <div class="user-wrapper">
-                            <img th:src="@{/images/avt4.jpg}" width="40px" height="40px" alt="">
-                            <div>
-                                <h4 th:text="test"></h4>
-                                <small>User</small>
-                            </div>
-                        </div>
+                    <li th:if="${session.auth} == true">
+                        <th:block th:if="${session.role == true}">
+                            <a th:href="@{'/admin/' + ${session.id}}" class="user-wrapper">
+                                <img th:src="@{/images/avt4.jpg}" width="40px" height="40px" alt="">
+                                <div>
+                                    <h4 th:text="${session.ho} + ' ' + ${session.ten}"></h4>
+                                    <small>Super Admin</small>
+                                </div>
+                            </a>
+                        </th:block>
+                        <th:block th:if="${session.role != true}">
+                            <a th:href="@{'/account/' + ${session.id}}" class="user-wrapper">
+                                <img th:src="@{/images/avt4.jpg}" width="40px" height="40px" alt="">
+                                <div>
+                                    <h4 th:text="${session.ho} + ' ' + ${session.ten}"></h4>
+                                    <small>User</small>
+                                </div>
+                            </a>
+                        </th:block>
                     </li>
-<!--                    <div class="search">-->
-<!--                        <input type="text" class="input" placeholder="Search...">-->
-<!--                        <button class="btn">-->
-<!--                            <i class="fas fa-search"></i>-->
-<!--                        </button>-->
-<!--                    </div>-->
                 </ul>
                 <!-- MOBILE MENU TOGGLE -->
                 <div class="hamburger-menu" id="hamburger-menu">

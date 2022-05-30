@@ -45,7 +45,7 @@ body {
 
 .sidebar-brand {
     height: 90px;
-    padding: 1rem 0rem 1rem 2rem;
+    padding: 1rem 0 1rem 2rem;
     color: #000000;
 }
 
@@ -80,7 +80,7 @@ body {
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: var(--main-color);
-    border-radius: 30px 0px 0px 30px;
+    border-radius: 30px 0 0 30px;
 }
 
 .sidebar-menu a span:first-child {
@@ -99,7 +99,7 @@ body {
 }
 
 #nav-toggle:checked + .sidebar li a {
-    padding-left: 0rem;
+    padding-left: 0;
 }
 
 #nav-toggle:checked + .sidebar .sidebar-brand h2 span:last-child,
@@ -169,7 +169,7 @@ header h2 {
 
 .search-wrapper span {
     display: inline-block;
-    padding: 0rem 1rem;
+    padding: 0 1rem;
     font-size: 1.5rem;
 }
 
@@ -232,7 +232,7 @@ main {
 
 .edit-btn {
     position: absolute;
-    right: 0px;
+    right: 0;
     padding-right: 15px;
     cursor: pointer;
 }
@@ -296,13 +296,13 @@ main {
 }
 
 .film-card .card-name {
-    top: 0px;
+    top: 0;
     font-size: 20px;
     padding: 10px 10px;
 }
 
 .film-card .card-total{
-    bottom: 0px;
+    bottom: 0;
     font-size: 18px;
     padding: 10px 10px;
     border-radius: 8px;
@@ -375,7 +375,7 @@ main {
     }
 
     .sidebar li a {
-        padding-left: 0rem;
+        padding-left: 0;
     }
 
     .sidebar .sidebar-brand h2 span:last-child,
@@ -418,7 +418,7 @@ main {
     header h2 label {
         display: inline-block;
         background: var(--main-color);
-        padding-right: 0rem;
+        padding-right: 0;
         margin-right: 1rem;
         height: 40px;
         width: 40px;
@@ -431,12 +431,12 @@ main {
 
     header h2 span {
         text-align: center;
-        padding-right: 0rem;
+        padding-right: 0;
     }
 
     .main-content {
         width: 100%;
-        margin-left: 0rem;
+        margin-left: 0;
     }
 
     header {
@@ -466,7 +466,7 @@ main {
     }
 
     #nav-toggle:checked ~ .main-content {
-        margin-left: 0rem !important;
+        margin-left: 0 !important;
     }
 
     .film-grid {

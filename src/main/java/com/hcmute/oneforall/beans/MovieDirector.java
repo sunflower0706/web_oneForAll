@@ -1,6 +1,5 @@
 package com.hcmute.oneforall.beans;
 
-import com.hcmute.oneforall.key.MovieCastKey;
 import com.hcmute.oneforall.key.MovieDirectorKey;
 
 import javax.persistence.*;

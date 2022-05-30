@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="fragments/header :: head">
+</head>
+<body>
+    <div layout:fragment="content" th:object="${admin}">
+        <link rel="stylesheet" th:href="@{/CSS/admin.css}">
+        <input type="checkbox" id="nav-toggle">
+        <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="lab la-youtube"></span><span>ALLFORONE</span></h2>
+        </div>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href=""><span class="las la-igloo"></span>
+                    <span>Bảng điều khiển</span></a>
+                </li>
+                <li>
+                    <a href="" ><span class="las la-box"></span>
+                    <span>Quản lý dữ liệu</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-users"></span>
+                    <span>Người dùng</span></a>
+                </li>
+                <li>
+                    <a href="" class="active"><span class="las la-file-video"></span>
+                    <span>Film</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-question-circle"></span>
+                    <span>Về web</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-sign-out-alt"></span>
+                    <span>Đăng xuất</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+        <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+                Film
+            </h2>
+
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="Search here">
+            </div>
+
+            <div class="user-wrapper">
+                <img src="img/avt4.jpg" width="40px" height="40px" alt="">
+                <div>
+                    <h4>Liluphuong</h4>
+                    <small>Super admin</small>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="add_film">
+                <div class="film-info-title">
+                    Thông tin film
+                </div>
+                <div class="film-info-container">
+                    <div class="input_box">
+                        <span class="details">Tên film: </span>
+                        <input class="rectangle" type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Năm: </span>
+                        <input class="rectangle" type="text" placeholder="Enter your year" required>
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Chất lượng: </span>
+                        <input class="rectangle" type="text" placeholder="Enter your quality" required>
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Quốc gia: </span>
+                        <input class="rectangle" type="text" placeholder="Enter your country" required>
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Thời lượng: </span>
+                        <input class="rectangle" type="text" placeholder="Enter your duration" required>
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Mô tả: </span>
+                        <input class="rectangle description" type="text" placeholder="Enter your description" required>
+                    </div>
+                </div>
+            </div>
+            <div class="action">
+                <div class="button">
+                    <input type="submit" class="button_cancel" value="HỦY">
+                </div>
+                <div class="button">
+                    <input type="submit" class="button_save" value="LƯU">
+                </div>
+            </div>
+        </main>
+    </div>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

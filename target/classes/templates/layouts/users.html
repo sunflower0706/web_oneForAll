@@ -103,7 +103,7 @@
                                     </th:block>
                                     <div>
                                         <span>Ngày sinh:&nbsp;</span>
-                                        <th:block th:text="${#strings.arraySplit(account.getNgay_sinh().toString(), ' ')[0]}"></th:block>
+                                        <th:block th:text="${#dates.format(account.getNgay_sinh(), 'MM/dd/yyyy')}"></th:block>
                                     </div>
                                 </div>
                                 <div class="info-account">

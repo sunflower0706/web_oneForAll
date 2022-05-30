@@ -87,4 +87,22 @@ public class AdminController {
 
         return "layouts/manageData";
     }
+
+    @GetMapping(value = "/{id}/film")
+    public String film (Model model,
+                        @PathVariable("id") int id){
+        return "layouts/film";
+    }
+
+    @GetMapping(value = "/{id}/film/edit")
+    public String editFilm (Model model,
+                        @PathVariable("id") int id){
+        return "layouts/editFilm";
+    }
+
+    @GetMapping(value = "/{id}/data/edit")
+    public String editData (Model model,
+                        @PathVariable("id") int id){
+        return "layouts/editData";
+    }
 }

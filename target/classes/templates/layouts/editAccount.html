@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <div class="main-content">
+        <div class="main-content" th:object="${account}">
             <header>
                 <h2>
                     <label for="nav-toggle">
@@ -57,65 +57,70 @@
                 <div class="user-wrapper">
                     <img th:src="@{/images/avt4.jpg}" width="40px" height="40px" alt="">
                     <div>
-                        <h4>Liluphuong</h4>
+                        <h4 th:text="${account.getTen() + ' ' + account.getHo()}"></h4>
                         <small>User</small>
                     </div>
                 </div>
             </header>
 
             <main>
-                <div class="account_info">
-                    <div class="account-info-title">
-                        Thông tin cá nhân
-                    </div>
-                    <div class="account-info-container">
-                        <div class="input_box">
-                            <span class="details">Tên người dùng: </span>
-                            <input class="rectangle" type="text" placeholder="Enter your name" required>
+                <form>
+                    <div class="account_info">
+                        <div class="account-info-title">
+                            Thông tin cá nhân
                         </div>
-                        <div class="input_box">
-                            <span class="details">Giới tính: </span>
-                            <input class="cicrle" type="radio" name="gender">Nam
-                            <input class="cicrle" type="radio" name="gender">Nữ
-                        </div>
-                        <div class="input_box">
-                            <span class="details">Sinh nhật: </span>
-                            <input class="rectangle" type="date">
-                        </div>
-                    </div>
-                </div>
-                <div class="account_info">
-                    <div class="account-info-title">
-                        Tài khoản và bảo mật
-                    </div>
-                    <div class="account-info-container">
-                        <div class="input_box">
-                            <span class="details">Email: </span>
-                            <input class="rectangle" type="text" placeholder="Enter your email" required>
-                        </div>
-                        <div class="input_box">
-                            <span class="details">Số điện thoại: </span>
-                            <input class="rectangle" type="text" placeholder="Enter your phone" required>
-                        </div>
-                        <div class="input_box">
-                            <span class="details">Mật khẩu: </span>
-                            <input class="rectangle" type="text" placeholder="Enter your password" required>
-                        </div>
-                        <div class="input_box">
-                            <span class="details">Nhập lại mật khẩu: </span>
-                            <input class="rectangle" type="text" placeholder="Confirm your password" required>
+                        <div class="account-info-container">
+                            <div class="input_box">
+                                <span class="details">Tên: </span>
+                                <input class="rectangle" th:field="*{ten}" type="text" placeholder="Enter your firstname" required>
+                            </div>
+                            <div class="input_box">
+                                <span class="details">Họ: </span>
+                                <input class="rectangle" th:field="*{ho}" type="text" placeholder="Enter your lastname" required>
+                            </div>
+                            <div class="input_box">
+                                <span class="details">Giới tính: </span>
+                                <th:block th:if="${account.isGioi_tinh()} == true">
+                                    <input class="cicrle" type="radio" name="gender" checked>Nam
+                                    <input class="cicrle" type="radio" name="gender">Nữ
+                                </th:block>
+                                <th:block th:if="${account.isGioi_tinh()} == false">
+                                    <input class="cicrle" type="radio" name="gender">Nam
+                                    <input class="cicrle" type="radio" name="gender" checked>Nữ
+                                </th:block>
+                            </div>
+                            <div class="input_box">
+                                <span class="details">Ngày sinh: </span>
+                                <input class="rectangle" th:value="${#dates.format(account.getNgay_sinh(), 'yyyy-MM-dd')}" type="date">
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="account_info">
+                        <div class="account-info-title">
+                            Tài khoản và bảo mật
+                        </div>
+                        <div class="account-info-container">
+                            <div class="input_box">
+                                <span class="details">Email: </span>
+                                <input class="rectangle" type="email" th:field="*{email}" placeholder="Enter your email" required>
+                            </div>
+                            <div class="input_box">
+                                <span class="details">Số điện thoại: </span>
+                                <input class="rectangle" type="number" th:field="*{sdt}" placeholder="Enter your phone" required>
+                            </div>
+                            <div class="input_box">
+                                <span class="details">Mật khẩu: </span>
+                                <input class="rectangle" type="password" placeholder="Enter your password" required>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="action">
-                    <div class="button">
-                        <input type="submit" class="button_cancel" value="HỦY">
+                    <div class="action">
+                        <div class="button">
+                            <button type="submit" class="button_save">Lưu</button>
+                        </div>
                     </div>
-                    <div class="button">
-                        <input type="submit" class="button_save" value="LƯU">
-                    </div>
-                </div>
+                </form>
             </main>
         </div>
     </div>

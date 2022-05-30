@@ -1,6 +1,7 @@
 package com.hcmute.oneforall.beans;
 
 import lombok.Getter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;

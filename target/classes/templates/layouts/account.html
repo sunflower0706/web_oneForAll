@@ -89,7 +89,7 @@
                                 </th:block>
                                 <div class="info-group">
                                     <span>Ngày sinh: </span>
-                                    <th:block th:text="${#strings.arraySplit(account.getNgay_sinh().toString(), ' ')[0]}"></th:block>
+                                    <th:block th:text="${#dates.format(account.getNgay_sinh(), 'MM/dd/yyyy')}"></th:block>
                                 </div>
                             </div>
                         </div>
@@ -112,22 +112,11 @@
                             <th:block th:text="${account.getSdt()}"></th:block>
                             <div class="edit-btn">Chỉnh sửa</div>
                         </div>
-                        <div class="info-group">
-                            <span>Mật khẩu:</span>
-                            &nbsp;*************
-                            <div class="edit-btn">Chỉnh sửa</div>
-                        </div>
                     </div>
                 </div>
             </main>
         </div>
     </div>
     <div th:replace="fragments/footer :: footer"></div>
-    <script>
-        var loader = document.getElementById("preloader")
-        window.addEventListener("load",function(){
-            loader.style.display = "none";
-        })
-    </script>
 </body>
 </html>

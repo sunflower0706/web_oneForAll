@@ -28,7 +28,15 @@ public class LoginController {
 	}
 
 	@GetMapping(value = "/{id}/edit")
-	public String history(Model model,
+	public String getHistory(Model model,
+						  @PathVariable("id") int id){
+		Account account = accountRepository.findById(id);
+		model.addAttribute("account", account);
+		return "layouts/editAccount";
+	}
+
+	@PostMapping(value = "/{id}/edit")
+	public String postHistory(Model model,
 						  @PathVariable("id") int id){
 		Account account = accountRepository.findById(id);
 		model.addAttribute("account", account);
@@ -106,4 +114,3 @@ public class LoginController {
 		session.setAttribute("authAcc", null);
 	}
 }
-  

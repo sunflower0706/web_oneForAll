@@ -351,12 +351,16 @@ main {
     justify-content: center;
 }
 
-.action .button input{
+.action .button button{
     margin-left: 10px;
     margin-right: 10px;
     height: 30px;
     width: 80px;
     outline: none;
+}
+
+.action .button button:hover{
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1200px) {

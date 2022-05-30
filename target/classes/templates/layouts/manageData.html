@@ -93,7 +93,7 @@
                                             </thead>
                                             <tbody th:each="actor:${actors}">
                                                 <tr>
-                                                    <td th:text="${actor.getHo() + actor.getTen()}"></td>
+                                                    <td th:text="${actor.getHo() + ' ' + actor.getTen()}"></td>
                                                     <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
                                                 </tr>
                                             </tbody>
@@ -122,7 +122,7 @@
                                             </thead>
                                             <tbody th:each="director:${directors}">
                                             <tr>
-                                                <td th:text="${director.getHo() + director.getTen()}"></td>
+                                                <td th:text="${director.getHo() + ' ' + director.getTen()}"></td>
                                                 <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
                                             </tr>
                                             </tbody>

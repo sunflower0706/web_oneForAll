@@ -105,4 +105,16 @@ public class AdminController {
                         @PathVariable("id") int id){
         return "layouts/editData";
     }
+
+    @GetMapping(value = "/{id}/data/edit/director")
+    public String editDataDirector (Model model,
+                            @PathVariable("id") int id){
+        return "layouts/editDataDirector";
+    }
+
+    @GetMapping(value = "/{id}/data/edit/genre")
+    public String editDataGenre (Model model,
+                                    @PathVariable("id") int id){
+        return "layouts/editDataGenre";
+    }
 }

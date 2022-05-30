@@ -21,26 +21,44 @@ public class LoginController {
 
 	@GetMapping(value = "/{id}")
 	public String account(Model model,
-								 @PathVariable("id") int id){
+						  @PathVariable("id") int id){
 		Account account = accountRepository.findById(id);
 		model.addAttribute("account", account);
 		return "layouts/account";
 	}
 
 	@GetMapping(value = "/{id}/edit")
-	public String getHistory(Model model,
-						  @PathVariable("id") int id){
+	public String getEditAccount(Model model,
+							 @PathVariable("id") int id){
 		Account account = accountRepository.findById(id);
 		model.addAttribute("account", account);
+
 		return "layouts/editAccount";
 	}
 
 	@PostMapping(value = "/{id}/edit")
-	public String postHistory(Model model,
-						  @PathVariable("id") int id){
-		Account account = accountRepository.findById(id);
-		model.addAttribute("account", account);
-		return "layouts/editAccount";
+	public String postEditAccount(Model model,
+							  @ModelAttribute("account") Account account,
+							  @PathVariable("id") int id, HttpServletRequest request){
+		HttpSession session = request.getSession();
+		Account authAcc = accountRepository.findById(id);
+		String mat_khau = Objects.requireNonNull(account.getMat_khau());
+		BCrypt.Result result = BCrypt.verifyer().verify(mat_khau.toCharArray(), authAcc.getMat_khau());
+		if (result.verified) {
+			accountRepository.update(account.getId(),
+					account.getHo(),
+					account.getTen(),
+					account.getNgay_sinh(),
+					account.isGioi_tinh(),
+					account.getEmail(),
+					account.getSdt()
+			);
+			session.setAttribute("success", true);
+		}else {
+			session.setAttribute("success", true);
+		}
+
+		return "redirect:/account/" + id +"/edit";
 	}
 
 	@GetMapping(value = "/login")
@@ -74,8 +92,9 @@ public class LoginController {
 				accountRepository.save(account);
 
 				setSession(session, account);
+				String id = Integer.toString(account.getId());
 
-				return "redirect:/account/edit";
+				return "redirect:/account/" + id + "/edit";
 			}
 
 			return "redirect:/account/login";

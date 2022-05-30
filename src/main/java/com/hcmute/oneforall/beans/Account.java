@@ -26,6 +26,7 @@ public class Account {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "ngay_sinh")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date ngay_sinh;
 
     @Column(name = "email")

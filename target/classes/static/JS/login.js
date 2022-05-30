@@ -3,7 +3,6 @@ const loginForm = document.querySelector("form.login");
 const loginBtn = document.querySelector("label.login");
 const signupBtn = document.querySelector("label.signup");
 const signupLink = document.querySelector("form .signup-link a");
-const signupForm = document.querySelector("#signupForm");
 
 function submitForm(event){
     if (document.getElementById('signupPass').value !== document.getElementById('confirmPass').value){

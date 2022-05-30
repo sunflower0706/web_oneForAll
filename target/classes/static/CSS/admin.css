@@ -338,6 +338,13 @@ td {
     grid-template-columns: 32.5% 32.5% 32.5% ;
 }
 
+.add-film-grid {
+    margin: 1rem 1rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 60% 40%;
+}
+
 .info-user,
 .info-account {
     display: inline;
@@ -347,6 +354,123 @@ td {
 .info-user span,
 .info-account span {
     font-weight: 700;
+}
+.card-body .input_box{
+    display: flex;
+    align-items: center;
+    padding: 24px 15px;
+}
+
+.input_box .rectangle{
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    border-bottom-width: 2px;
+}
+
+.input_box .description{
+    max-height: 200px;
+    box-sizing: border-box;
+    height: 100px;
+}
+
+.input_box .rectangle:focus{
+    border-color: var(--main-color);
+}
+
+.card-body .input_box span {
+    width: 10%;
+}
+
+.film-info-container .input_box span {
+    width: 15%;
+}
+
+.film-other-info-container .input_box span {
+    width: 25%;
+}
+
+.film-info-title {
+    padding-bottom: 10px;
+}
+
+.film-other-info-title {
+    padding-bottom: 10px;
+}
+
+.film-info-container {
+    height: 100%;
+    background: #000000;
+    border-radius: 6px;
+}
+
+.film-other-info-container {
+    height: 100%;
+    background: #000000;
+    border-radius: 6px;
+}
+
+.film-info-container .info-group {
+    position: relative;
+}
+
+.film-info-container .info-group {
+    display: flex;
+    align-items: center;
+    padding: 24px 15px;
+}
+
+.film-info-container .input_box{
+    display: flex;
+    align-items: center;
+    padding: 24px 15px;
+}
+
+
+.film-other-info-container .input_box{
+    display: flex;
+    align-items: center;
+    padding: 24px 15px;
+}
+
+.action{
+    margin-top: 15px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.action .button input{
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;
+    width: 80px;
+    outline: none;
+}
+
+.input_box .cicrle{
+    margin-left: 2%;
+}
+
+.action{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action .button button{
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;
+    width: 80px;
+    outline: none;
+}
+
+.action .button button:hover{
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -458,6 +582,9 @@ td {
     }
 
     .basic-grid {
+        grid-template-columns: 100%;
+    }
+    .add-film-grid {
         grid-template-columns: 100%;
     }
 }

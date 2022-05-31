@@ -37,7 +37,6 @@ public class LoginController {
 								 @PathVariable("id") int id,
 								 HttpSession session){
 		if(session.getAttribute("auth") != null){
-			System.out.println(session.getAttribute("authAcc"));
 			Account account = accountRepository.findById(id);
 			model.addAttribute("account", account);
 
@@ -69,6 +68,44 @@ public class LoginController {
 		}
 
 		return "layouts/editAccount";
+	}
+
+	@GetMapping(value = "/{id}/password/edit")
+	public String getEditPassword(Model model,
+								 @PathVariable("id") int id,
+								 HttpSession session){
+		if(session.getAttribute("auth") != null){
+			Account account = accountRepository.findById(id);
+
+			model.addAttribute("account", account);
+
+			return "layouts/editPassword";
+		}
+
+		return "redirect:/404";
+	}
+
+	@PostMapping(value = "/{id}/password/edit")
+	public String postEditPassword(@ModelAttribute("account") Account account,
+								   @PathVariable("id") int id,
+								   @RequestParam("pass") String pass,
+								   Model model,
+								   HttpSession session){
+
+		Account authAcc = accountRepository.findById(id);
+		BCrypt.Result result = BCrypt.verifyer().verify(pass.toCharArray(), authAcc.getMat_khau());
+		if (result.verified) {
+			String bcryptHashString = BCrypt.withDefaults().hashToString(12, account.getMat_khau().toCharArray());
+
+			accountRepository.updatePassword(id, bcryptHashString);
+			model.addAttribute("account", accountRepository.findById(id));
+
+			model.addAttribute("success", true);
+		}else {
+			model.addAttribute("success", false);
+		}
+
+		return "layouts/editPassword";
 	}
 
 	@GetMapping(value = "/login")

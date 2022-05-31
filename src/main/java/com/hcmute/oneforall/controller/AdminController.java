@@ -108,25 +108,6 @@ public class AdminController {
         return "redirect:/404";
     }
 
-    @GetMapping(value = "/{id}/film/add")
-    public String addFilm (Model model,
-                        @PathVariable("id") int id,
-                            HttpSession session){
-        if(session.getAttribute("auth") != null){
-            Account account = accountRepository.findById(id);
-            ArrayList<Object[]> movieGenres = movieRepository.findAllMovieWithGenre();
-
-            Map<Integer, String[]> movieWithGenre = GetMovieWithGenre.getMovieWithGenre(movieGenres);
-
-            model.addAttribute("movies", movieWithGenre);
-            model.addAttribute("admin", account);
-
-            return "layouts/addFilm";
-        }
-
-        return "redirect:/404";
-    }
-
     @GetMapping(value = "/{id}/data/add/actor")
     public String getAddData (Model model,
                             @PathVariable("id") int id,
@@ -197,5 +178,32 @@ public class AdminController {
         genreRepository.save(genre);
 
         return "redirect:/admin/"+ id + "/data/add/genre";
+    }
+
+    @GetMapping(value = "/{id}/film/add")
+    public String getAddFilm (Model model,
+                           @PathVariable("id") int id,
+                           HttpSession session){
+        if(session.getAttribute("auth") != null){
+            Account account = accountRepository.findById(id);
+            ArrayList<Object[]> movieGenres = movieRepository.findAllMovieWithGenre();
+
+            Map<Integer, String[]> movieWithGenre = GetMovieWithGenre.getMovieWithGenre(movieGenres);
+
+            model.addAttribute("movies", movieWithGenre);
+            model.addAttribute("admin", account);
+
+            return "layouts/addFilm";
+        }
+
+        return "redirect:/404";
+    }
+
+    @PostMapping(value = "/{id}/film/add")
+    public String postAddFilm (Model model,
+                           @PathVariable("id") int id,
+                           HttpSession session){
+
+         return "layouts/addFilm";
     }
 }

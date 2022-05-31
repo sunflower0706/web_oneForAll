@@ -29,6 +29,10 @@
                             <span>Sửa thông tin</span></a>
                     </li>
                     <li>
+                        <a th:href="@{'/account/'+ ${account.getId()} +'/password/edit'}"><span class="las la-sync"></span>
+                            <span>Đổi mật khẩu</span></a>
+                    </li>
+                    <li>
                         <a th:href="@{/}"><span class="las la-sign-out-alt"></span>
                             <span>Về web</span></a>
                     </li>
@@ -48,11 +52,6 @@
                     </label>
                     Tài khoản
                 </h2>
-
-                <div class="search-wrapper">
-                    <span class="las la-search"></span>
-                    <input type="search" placeholder="Search here">
-                </div>
 
                 <div class="user-wrapper">
                     <img th:src="@{/images/avt4.jpg}" width="40px" height="40px" alt="">

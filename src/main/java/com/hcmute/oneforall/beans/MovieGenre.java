@@ -22,6 +22,7 @@ public class MovieGenre {
     @JoinColumn(name = "idMV")
     private Movie movie;
 
+    public MovieGenre(){}
 
     public void setId(MovieGenreKey id) {
         this.id = id;
@@ -29,6 +30,14 @@ public class MovieGenre {
 
     public MovieGenreKey getId() {
         return id;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
     }
 
     @Override

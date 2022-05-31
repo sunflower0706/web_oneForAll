@@ -32,6 +32,14 @@ public class Rating {
         return id;
     }
 
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
     public void setSao(int sao) {
         this.sao = sao;
     }

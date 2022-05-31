@@ -121,6 +121,38 @@ public class Movie {
         return link_phim;
     }
 
+    public Set<MovieCast> getMovieCasts() {
+        return movieCasts;
+    }
+
+    public Set<MovieDirector> getMovieDirectors() {
+        return movieDirectors;
+    }
+
+    public Set<MovieGenre> getMovieGenres() {
+        return movieGenres;
+    }
+
+    public Set<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setMovieCasts(Set<MovieCast> movieCasts) {
+        this.movieCasts = movieCasts;
+    }
+
+    public void setMovieGenres(Set<MovieGenre> movieGenres) {
+        this.movieGenres = movieGenres;
+    }
+
+    public void setMovieDirectors(Set<MovieDirector> movieDirectors) {
+        this.movieDirectors = movieDirectors;
+    }
+
+    public void setRatings(Set<Rating> ratings) {
+        this.ratings = ratings;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +

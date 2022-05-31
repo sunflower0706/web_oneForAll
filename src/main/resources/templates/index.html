@@ -12,47 +12,45 @@
             <!-- HERO SLIDE -->
             <div class="hero-slide">
                 <div class="owl-carousel carousel-nav-center" id="hero-carousel">
-                    <th:block th:each ="i:${#numbers.sequence(0, movies.size() - 1, 1)}">
-                        <th:block th:if="${i} < 5">
-                            <!-- SLIDE ITEM -->
-                            <div class="hero-slide-item">
-                                    <img th:src="@{'/images/movies/' + ${names[i]} + '.jpg'}" alt="">
-                                    <div class="overlay"></div>
-                                    <div class="hero-slide-item-content">
-                                        <div class="item-content-wraper">
-                                            <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i][0]}}">
-                                                <div class="item-content-title top-down" th:text="${movies[i][1]}"></div>
+                    <th:block th:each ="i:${#numbers.sequence(0, movies.size() - 1)}">
+                        <!-- SLIDE ITEM -->
+                        <div class="hero-slide-item">
+                                <img th:src="@{'/images/' + ${names[i]} + '.jpg'}" alt="">
+                                <div class="overlay"></div>
+                                <div class="hero-slide-item-content">
+                                    <div class="item-content-wraper">
+                                        <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i][0]}}">
+                                            <div class="item-content-title top-down" th:text="${movies[i][1]}"></div>
+                                        </a>
+                                        <div class="movie-infos top-down delay-2">
+                                            <div class="movie-info">
+                                                <i class="bx bxs-star"></i>
+                                                <span th:text="${movies[i][6]}"></span>
+                                            </div>
+                                            <div class="movie-info">
+                                                <i class="bx bxs-time"></i>
+                                                <span th:text="${movies[i][3]}"></span>
+                                                <span>tập</span>
+                                            </div>
+                                            <div class="movie-info">
+                                                <span th:text="${movies[i][2]}">HD</span>
+                                            </div>
+                                            <div class="movie-info">
+                                                <span>16+</span>
+                                            </div>
+                                        </div>
+                                        <div class="item-content-description top-down delay-4" th:text="${movies[i][4]}">
+                                        </div>
+                                        <div class="item-action top-down delay-6">
+                                            <a th:href="@{'/movie/theatre/'+${names[i]}+'%20tap%201/'+${movies[i][0]}}" class="btn btn-hover">
+                                                <i class="bx bxs-right-arrow"></i>
+                                                <span>Watch now</span>
                                             </a>
-                                            <div class="movie-infos top-down delay-2">
-                                                <div class="movie-info">
-                                                    <i class="bx bxs-star"></i>
-                                                    <span th:text="${movies[i][6]}"></span>
-                                                </div>
-                                                <div class="movie-info">
-                                                    <i class="bx bxs-time"></i>
-                                                    <span th:text="${movies[i][3]}"></span>
-                                                    <span>tập</span>
-                                                </div>
-                                                <div class="movie-info">
-                                                    <span th:text="${movies[i][2]}">HD</span>
-                                                </div>
-                                                <div class="movie-info">
-                                                    <span>16+</span>
-                                                </div>
-                                            </div>
-                                            <div class="item-content-description top-down delay-4" th:text="${movies[i][4]}">
-                                            </div>
-                                            <div class="item-action top-down delay-6">
-                                                <a th:href="@{'/movie/theatre/'+${names[i]}+'%20tap%201/'+${movies[i][0]}}" class="btn btn-hover">
-                                                    <i class="bx bxs-right-arrow"></i>
-                                                    <span>Watch now</span>
-                                                </a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            <!-- END SLIDE ITEM -->
-                        </th:block>
+                            </div>
+                        <!-- END SLIDE ITEM -->
                     </th:block>
                 </div>
             </div>
@@ -60,37 +58,35 @@
             <!-- TOP MOVIES SLIDE -->
             <div class="top-movies-slide">
                 <div class="owl-carousel" id="top-movies-slide">
-                    <th:block th:each ="i:${#numbers.sequence(0, movies.size()-1, 1)}">
-                        <th:block th:if="${i} < 10">
-                            <!-- MOVIE ITEM -->
-                            <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i][0]}}">
-                                <div class="movie-item">
-                                <img th:src="@{'/images/movies/' + ${names[i]} + '.jpg'}" alt="">
-                                <div class="movie-item-content">
-                                    <div class="movie-item-title" th:text="${movies[i][1]}">
+                    <th:block th:each ="i:${#numbers.sequence(0, movies.size()-1)}">
+                        <!-- MOVIE ITEM -->
+                        <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i][0]}}">
+                            <div class="movie-item">
+                            <img th:src="@{'/images/' + ${names[i]} + ' small.jpg'}" alt="">
+                            <div class="movie-item-content">
+                                <div class="movie-item-title" th:text="${movies[i][1]}">
+                                </div>
+                                <div class="movie-infos">
+                                    <div class="movie-info">
+                                        <i class="bx bxs-star"></i>
+                                        <span th:text="${movies[i][6]}"></span>
                                     </div>
-                                    <div class="movie-infos">
-                                        <div class="movie-info">
-                                            <i class="bx bxs-star"></i>
-                                            <span th:text="${movies[i][6]}"></span>
-                                        </div>
-                                        <div class="movie-info">
-                                            <i class="bx bxs-time"></i>
-                                            <span th:text="${movies[i][3]}"></span>
-                                            <span>Tập</span>
-                                        </div>
-                                        <div class="movie-info">
-                                            <span th:text="${movies[i][2]}"></span>
-                                        </div>
-                                        <div class="movie-info">
-                                            <span>16+</span>
-                                        </div>
+                                    <div class="movie-info">
+                                        <i class="bx bxs-time"></i>
+                                        <span th:text="${movies[i][3]}"></span>
+                                        <span>Tập</span>
+                                    </div>
+                                    <div class="movie-info">
+                                        <span th:text="${movies[i][2]}"></span>
+                                    </div>
+                                    <div class="movie-info">
+                                        <span>16+</span>
                                     </div>
                                 </div>
                             </div>
-                            </a>
-                            <!-- END MOVIE ITEM -->
-                        </th:block>
+                        </div>
+                        </a>
+                        <!-- END MOVIE ITEM -->
                     </th:block>
                 </div>
             </div>
@@ -106,36 +102,34 @@
                 </div>
                 <div class="movies-slide carousel-nav-center owl-carousel">
                     <th:block th:each ="i:${#numbers.sequence(0, movies.size() - 1, 1)}">
-                        <th:block th:if="${i} < 10">
-                            <!-- MOVIE ITEM -->
-                            <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i][0]}}">
-                                <div class="movie-item">
-                                <img th:src="@{'/images/movies/' + ${names[i]} + '.jpg'}" alt="">
-                                <div class="movie-item-content">
-                                    <div class="movie-item-title" th:text="${movies[i][1]}">
+                        <!-- MOVIE ITEM -->
+                        <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i][0]}}">
+                            <div class="movie-item">
+                            <img th:src="@{'/images/' + ${names[i]} + ' small.jpg'}" alt="">
+                            <div class="movie-item-content">
+                                <div class="movie-item-title" th:text="${movies[i][1]}">
+                                </div>
+                                <div class="movie-infos">
+                                    <div class="movie-info">
+                                        <i class="bx bxs-star"></i>
+                                        <span th:text="${movies[i][6]}">9.5</span>
                                     </div>
-                                    <div class="movie-infos">
-                                        <div class="movie-info">
-                                            <i class="bx bxs-star"></i>
-                                            <span th:text="${movies[i][6]}">9.5</span>
-                                        </div>
-                                        <div class="movie-info">
-                                            <i class="bx bxs-time"></i>
-                                            <span th:text="${movies[i][3]}"></span>
-                                            <span>Tập</span>
-                                        </div>
-                                        <div class="movie-info">
-                                            <span th:text="${movies[i][2]}"></span>
-                                        </div>
-                                        <div class="movie-info">
-                                            <span>16+</span>
-                                        </div>
+                                    <div class="movie-info">
+                                        <i class="bx bxs-time"></i>
+                                        <span th:text="${movies[i][3]}"></span>
+                                        <span>Tập</span>
+                                    </div>
+                                    <div class="movie-info">
+                                        <span th:text="${movies[i][2]}"></span>
+                                    </div>
+                                    <div class="movie-info">
+                                        <span>16+</span>
                                     </div>
                                 </div>
                             </div>
-                            </a>
-                            <!-- END MOVIE ITEM -->
-                        </th:block>
+                        </div>
+                        </a>
+                        <!-- END MOVIE ITEM -->
                     </th:block>
                 </div>
             </div>
@@ -150,36 +144,34 @@
                 </div>
                 <div class="movies-slide carousel-nav-center owl-carousel">
                     <th:block th:each ="i:${#numbers.sequence(0, movies.size() - 1, 1)}">
-                        <th:block th:if="${i} < 10">
-                            <!-- MOVIE ITEM -->
-                            <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i][0]}}">
-                                <div class="movie-item">
-                                <img th:src="@{'/images/movies/' + ${names[i]} + '.jpg'}" alt="">
-                                <div class="movie-item-content">
-                                    <div class="movie-item-title" th:text="${movies[i][1]}">
+                        <!-- MOVIE ITEM -->
+                        <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i][0]}}">
+                            <div class="movie-item">
+                            <img th:src="@{'/images/' + ${names[i]} + ' small.jpg'}" alt="">
+                            <div class="movie-item-content">
+                                <div class="movie-item-title" th:text="${movies[i][1]}">
+                                </div>
+                                <div class="movie-infos">
+                                    <div class="movie-info">
+                                        <i class="bx bxs-star"></i>
+                                        <span th:text="${movies[i][6]}"></span>
                                     </div>
-                                    <div class="movie-infos">
-                                        <div class="movie-info">
-                                            <i class="bx bxs-star"></i>
-                                            <span th:text="${movies[i][6]}"></span>
-                                        </div>
-                                        <div class="movie-info">
-                                            <i class="bx bxs-time"></i>
-                                            <span th:text="${movies[i][3]}"></span>
-                                            <span>Tập</span>
-                                        </div>
-                                        <div class="movie-info">
-                                            <span th:text="${movies[i][2]}"></span>
-                                        </div>
-                                        <div class="movie-info">
-                                            <span>16+</span>
-                                        </div>
+                                    <div class="movie-info">
+                                        <i class="bx bxs-time"></i>
+                                        <span th:text="${movies[i][3]}"></span>
+                                        <span>Tập</span>
+                                    </div>
+                                    <div class="movie-info">
+                                        <span th:text="${movies[i][2]}"></span>
+                                    </div>
+                                    <div class="movie-info">
+                                        <span>16+</span>
                                     </div>
                                 </div>
                             </div>
-                            </a>
-                            <!-- END MOVIE ITEM -->
-                        </th:block>
+                        </div>
+                        </a>
+                        <!-- END MOVIE ITEM -->
                     </th:block>
                 </div>
             </div>
@@ -194,36 +186,34 @@
                 </div>
                 <div class="movies-slide carousel-nav-center owl-carousel">
                     <th:block th:each ="i:${#numbers.sequence(0, movies.size() - 1, 1)}">
-                        <th:block th:if="${i} < 10">
-                            <!-- MOVIE ITEM -->
-                            <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i][0]}}">
-                                <div class="movie-item">
-                                <img th:src="@{'/images/movies/' + ${names[i]} + '.jpg'}" alt="">
-                                <div class="movie-item-content">
-                                    <div class="movie-item-title" th:text="${movies[i][1]}">
+                        <!-- MOVIE ITEM -->
+                        <a th:href="@{'/movie/info/'+${names[i]}+'/'+${movies[i][0]}}">
+                            <div class="movie-item">
+                            <img th:src="@{'/images/' + ${names[i]} + ' small.jpg'}" alt="">
+                            <div class="movie-item-content">
+                                <div class="movie-item-title" th:text="${movies[i][1]}">
+                                </div>
+                                <div class="movie-infos">
+                                    <div class="movie-info">
+                                        <i class="bx bxs-star"></i>
+                                        <span th:text="${movies[i][6]}"></span>
                                     </div>
-                                    <div class="movie-infos">
-                                        <div class="movie-info">
-                                            <i class="bx bxs-star"></i>
-                                            <span th:text="${movies[i][6]}"></span>
-                                        </div>
-                                        <div class="movie-info">
-                                            <i class="bx bxs-time"></i>
-                                            <span th:text="${movies[i][3]}"></span>
-                                            <span>Tập</span>
-                                        </div>
-                                        <div class="movie-info">
-                                            <span th:text="${movies[i][2]}"></span>
-                                        </div>
-                                        <div class="movie-info">
-                                            <span>16+</span>
-                                        </div>
+                                    <div class="movie-info">
+                                        <i class="bx bxs-time"></i>
+                                        <span th:text="${movies[i][3]}"></span>
+                                        <span>Tập</span>
+                                    </div>
+                                    <div class="movie-info">
+                                        <span th:text="${movies[i][2]}"></span>
+                                    </div>
+                                    <div class="movie-info">
+                                        <span>16+</span>
                                     </div>
                                 </div>
                             </div>
-                            </a>
-                            <!-- END MOVIE ITEM -->
-                        </th:block>
+                        </div>
+                        </a>
+                        <!-- END MOVIE ITEM -->
                     </th:block>
                 </div>
             </div>
@@ -233,34 +223,32 @@
         <!-- SPECIAL MOVIE SECTION -->
         <div class="section">
             <div class="hero-slide-item">
-                <img th:src="@{/images/transformer-banner.jpg}" alt="">
+                <img th:src="@{'/images/' + ${names[movies.size() - 1]} + '.jpg'}" alt="">
                 <div class="overlay"></div>
                 <div class="hero-slide-item-content">
                     <div class="item-content-wraper">
-                        <div class="item-content-title">
-                            Transformer
-                        </div>
+                        <a th:href="@{'/movie/info/'+${names[movies.size() - 1]}+'/'+${movies[movies.size() - 1][0]}}">
+                            <div class="item-content-title" th:text="${movies[movies.size() - 1][1]}"></div>
+                        </a>
                         <div class="movie-infos">
                             <div class="movie-info">
                                 <i class="bx bxs-star"></i>
-                                <span>9.5</span>
+                                <span th:text="${movies[movies.size() - 1][6]}"></span>
                             </div>
                             <div class="movie-info">
                                 <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
+                                <span th:text="${movies[movies.size() - 1][3]}"></span>
                             </div>
                             <div class="movie-info">
-                                <span>HD</span>
+                                <span th:text="${movies[movies.size() - 1][2]}"></span>
                             </div>
                             <div class="movie-info">
                                 <span>16+</span>
                             </div>
                         </div>
-                        <div class="item-content-description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, possimus eius. Deserunt non odit, cum vero reprehenderit laudantium odio vitae autem quam, incidunt molestias ratione mollitia accusantium, facere ab suscipit.
-                        </div>
+                        <div class="item-content-description" th:text="${movies[movies.size() - 1][4]}"></div>
                         <div class="item-action">
-                            <a href="#" class="btn btn-hover">
+                            <a th:href="@{'/movie/theatre/'+${names[movies.size() - 1]}+'%20tap%201/'+${movies[movies.size() - 1][0]}}" class="btn btn-hover">
                                 <i class="bx bxs-right-arrow"></i>
                                 <span>Watch now</span>
                             </a>

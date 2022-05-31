@@ -51,7 +51,8 @@ public class LoginController {
 	@PostMapping(value = "/{id}/edit")
 	public String postEditAccount(@ModelAttribute("account") Account account,
 								  @PathVariable("id") int id,
-								  Model model){
+								  Model model,
+								  HttpSession session){
 		Account authAcc = accountRepository.findById(id);
 		String mat_khau = Objects.requireNonNull(account.getMat_khau());
 		BCrypt.Result result = BCrypt.verifyer().verify(mat_khau.toCharArray(), authAcc.getMat_khau());
@@ -64,6 +65,8 @@ public class LoginController {
 					account.getEmail(),
 					account.getSdt()
 			);
+
+			setSession(session, account);
 			model.addAttribute("success", true);
 		}else {
 			model.addAttribute("success", false);
@@ -140,9 +143,6 @@ public class LoginController {
 				String bcryptHashString = BCrypt.withDefaults().hashToString(12, password.toCharArray());
 
 				account.setMat_khau(bcryptHashString);
-				int size = accountRepository.size();
-				account.setId(size+1);
-				System.out.println(account.getId());
 				accountRepository.save(account);
 
 				setSession(session, account);

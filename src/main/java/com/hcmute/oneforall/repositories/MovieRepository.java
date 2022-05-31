@@ -34,4 +34,7 @@ public interface MovieRepository extends JpaRepository<Movie, Integer> {
 
     @Query(value = "SELECT CONCAT(md.director.ho, ' ', md.director.ten) FROM MovieDirector md WHERE md.movie.id = ?1")
     ArrayList<String> findDirector(int id);
+
+    @Query(value = "SELECT MAX (a.id) FROM Movie a")
+    int size();
 }

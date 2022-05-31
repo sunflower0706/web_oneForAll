@@ -11,4 +11,20 @@ public class RatingKey implements Serializable {
 
     @Column(name = "idMV")
     private int idMV;
+
+    public void setIdMV(int idMV) {
+        this.idMV = idMV;
+    }
+
+    public void setIdTK(int idTK) {
+        this.idTK = idTK;
+    }
+
+    public int getIdMV() {
+        return idMV;
+    }
+
+    public int getIdTK() {
+        return idTK;
+    }
 }

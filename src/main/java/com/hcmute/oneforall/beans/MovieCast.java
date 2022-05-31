@@ -26,13 +26,20 @@ public class MovieCast implements Serializable {
     @Column(name = "role")
     private String role;
 
-
     public void setId(MovieCastKey id) {
         this.id = id;
     }
 
     public MovieCastKey getId() {
         return id;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
     }
 
     public void setRole(String role) {

@@ -13,9 +13,9 @@
             <div class ="container">
                 <div class="padding"></div>
                 <th:block th:object="${name}">
-                    <div class="banner" th:style="'background: url(/images/movies/'+${name}+'.jpg); background-size: 100% 100%;'">
+                    <div class="banner" th:style="'background: url(/images/'+${name}+'.jpg); background-size: 100% 100%;'">
                         <div class="banner-info">
-                            <img class="banner-avatar" th:src="@{'/images/movies/'+${name}+'.jpg'}" alt=""/>
+                            <img class="banner-avatar" th:src="@{'/images/'+${name}+'.jpg'}" alt=""/>
                             <div class="banner-text">
                                 <h1 th:text="${movie.getTen_phim()}">
                                 </h1>

@@ -30,6 +30,14 @@ public class MovieDirector {
         return id;
     }
 
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
+
+    public void setDirector(Director director) {
+        this.director = director;
+    }
+
     @Override
     public String toString() {
         return "MovieDirector{" +

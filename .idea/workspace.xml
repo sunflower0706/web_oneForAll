@@ -4,26 +4,88 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca46439f-e996-4f94-8ad8-c2c1c5ae8113" name="Changes" comment="change display for add film">
+    <list default="true" id="ca46439f-e996-4f94-8ad8-c2c1c5ae8113" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45375571-d2c3-4305-b73d-2582f6908d85.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/45375571-d2c3-4305-b73d-2582f6908d85.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/beans/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/beans/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/beans/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/beans/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/beans/MovieCast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/beans/MovieCast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/beans/MovieDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/beans/MovieDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/beans/MovieGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/beans/MovieGenre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/beans/Rating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/beans/Rating.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/controller/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/key/MovieCastKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/key/MovieCastKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/key/MovieDirectorKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/key/MovieDirectorKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/key/MovieGenreKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/key/MovieGenreKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/key/RatingKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/key/RatingKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/ActorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/ActorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/DirectorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/DirectorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/GenreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/GenreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/MovieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/cartoons/coco.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/cartoons/croods.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/cartoons/demon-slayer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/cartoons/dragon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/cartoons/over-the-moon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/cartoons/weathering.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/cartoons/your-name.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/Again My Life.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/Dáng hình tình yêu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/Hậu cung Như Ý Truyện.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/KinnPorsche.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/Như ý phương phi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/Our Blues.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/Song Thể.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/The Treasure Code.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/Trường quân đội liệt hỏa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/bat-man.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/blood-shot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/call.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/captain-marvel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/end-game.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/hunter-killer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/insidious.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/love-roise.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/resident-evil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/theatre-dead.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/movies/transformer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/series/mandalorian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/series/penthouses.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/series/star-trek.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/series/start-trek.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/series/stranger-thing.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/series/supergirl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/series/the-falcon.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/series/wanda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/series/wanda.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/addFilm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/addFilm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/editAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/editAccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/movieInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/movieInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/Actor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/Actor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/Director.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/Director.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/Genre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/Genre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/MovieCast.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/MovieCast.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/MovieDirector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/MovieDirector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/MovieGenre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/MovieGenre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/Rating.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/beans/Rating.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/controller/MovieController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/controller/MovieController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/key/MovieCastKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/key/MovieCastKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/key/MovieDirectorKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/key/MovieDirectorKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/key/MovieGenreKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/key/MovieGenreKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/key/RatingKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/key/RatingKey.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/AccountRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/AccountRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/JS/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/JS/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/JS/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/JS/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/ActorRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/ActorRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/DirectorRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/DirectorRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/GenreRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/GenreRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/MovieRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/MovieRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/addFilm.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/addFilm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/editAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/editAccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/manageData.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/manageData.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/users.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +95,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -118,9 +180,12 @@
       <recent name="C:\Users\chien\IdeaProjects\src\main\resources\templates\layouts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chien\IdeaProjects\src\main\resources\static\images" />
       <recent name="C:\Users\chien\IdeaProjects\src\main\resources\templates\layouts" />
       <recent name="C:\Users\chien\IdeaProjects\src\main\resources\static\CSS" />
-      <recent name="C:\Users\chien\IdeaProjects\src\main\resources\static\images" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hcmute.oneforall.repositories" />
     </key>
   </component>
   <component name="RunManager">
@@ -159,7 +224,7 @@
       <workItem from="1653665990272" duration="55553000" />
       <workItem from="1653818166700" duration="17086000" />
       <workItem from="1653902900665" duration="44605000" />
-      <workItem from="1653993939047" duration="15271000" />
+      <workItem from="1653993939047" duration="36859000" />
     </task>
     <task id="LOCAL-00001" summary="add movie theatre">
       <created>1652968945470</created>
@@ -322,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654004258341</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fix signup">
+      <created>1654012526291</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1654012526291</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,6 +439,7 @@
     <MESSAGE value="add and code some functions" />
     <MESSAGE value="code some functions" />
     <MESSAGE value="change display for add film" />
-    <option name="LAST_COMMIT_MESSAGE" value="change display for add film" />
+    <MESSAGE value="fix signup" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix signup" />
   </component>
 </project>

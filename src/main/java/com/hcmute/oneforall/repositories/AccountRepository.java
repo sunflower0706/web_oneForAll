@@ -33,6 +33,6 @@ public interface AccountRepository extends JpaRepository<Account, Integer> {
                 @Param("email") String email,
                 @Param("sdt") String sdt);
 
-    @Query(value = "SELECT COUNT (a.id) FROM Account a")
+    @Query(value = "SELECT MAX (a.id) FROM Account a")
     int size();
 }

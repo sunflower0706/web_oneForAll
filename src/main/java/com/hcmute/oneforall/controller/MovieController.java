@@ -49,20 +49,27 @@ public class MovieController {
                                @PathVariable("id") int id,
                                @PathVariable("name") String name){
         Movie movie = movieRepository.findById(id);
-        String[] names = name.split(" ");
-        String[] linkPhims = movie.getLink_phim().split(";");
-        String linkPhim;
-        int ep = 0;
-        if (!Objects.equals(names[names.length - 1], "cuoi")){
-            ep = Integer.parseInt(names[names.length-1]);
-            linkPhim = linkPhims[ep-1];
-        }else {
-            linkPhim = linkPhims[linkPhims.length-1];
-        }
+        if (movie.getThoi_luong() > 1){
+            String[] names = name.split(" ");
+            String[] linkPhims = movie.getLink_phim().split(";");
+            String linkPhim;
+            int ep = 0;
+            if (!Objects.equals(names[names.length - 1], "cuoi")){
+                ep = Integer.parseInt(names[names.length-1]);
+                linkPhim = linkPhims[ep-1];
+            }else {
+                linkPhim = linkPhims[linkPhims.length-1];
+            }
 
-        if(ep < linkPhims.length){
+            if(ep < linkPhims.length){
+                model.addAttribute("movie", movie);
+                model.addAttribute("linkPhim", linkPhim);
+
+                return "layouts/movieTheatre";
+            }
+        }else {
             model.addAttribute("movie", movie);
-            model.addAttribute("linkPhim", linkPhim);
+            model.addAttribute("linkPhim", movie.getLink_phim());
 
             return "layouts/movieTheatre";
         }

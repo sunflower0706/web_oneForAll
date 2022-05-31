@@ -11,4 +11,20 @@ public class MovieCastKey implements Serializable {
 
     @Column(name = "idMV")
     private int idMV;
+
+    public void setIdMV(int idMV) {
+        this.idMV = idMV;
+    }
+
+    public void setIdAT(int idAT) {
+        this.idAT = idAT;
+    }
+
+    public int getIdMV() {
+        return idMV;
+    }
+
+    public int getIdAT() {
+        return idAT;
+    }
 }

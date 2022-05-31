@@ -8,7 +8,7 @@ import java.util.Set;
 public class Actor {
     @Id
     @Column(name = "idAT")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "ho")

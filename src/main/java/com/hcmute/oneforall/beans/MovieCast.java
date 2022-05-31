@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class MovieCast implements Serializable {
     @EmbeddedId
     @Column(name = "idMC")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private MovieCastKey id;
 
     @ManyToOne

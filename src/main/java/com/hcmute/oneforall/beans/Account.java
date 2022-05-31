@@ -11,7 +11,7 @@ import java.util.Set;
 public class Account {
     @Id
     @Column(name = "idTK")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "ho")
@@ -61,7 +61,7 @@ public class Account {
         this.phan_quyen = phan_quyen;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

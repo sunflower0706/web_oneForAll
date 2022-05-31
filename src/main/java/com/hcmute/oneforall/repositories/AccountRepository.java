@@ -32,4 +32,7 @@ public interface AccountRepository extends JpaRepository<Account, Integer> {
                 @Param("gioitinh") boolean gioitinh,
                 @Param("email") String email,
                 @Param("sdt") String sdt);
+
+    @Query(value = "SELECT COUNT (a.id) FROM Account a")
+    int size();
 }

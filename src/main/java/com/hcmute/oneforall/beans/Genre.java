@@ -8,7 +8,7 @@ import java.util.Set;
 public class Genre {
     @Id
     @Column(name = "idGR")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "mo_ta")

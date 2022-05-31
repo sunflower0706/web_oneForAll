@@ -34,7 +34,8 @@ public class AdminController {
     public String dashBoard(Model model,
                             @PathVariable("id") int id,
                             HttpSession session){
-        if(session.getAttribute("auth") != null) {
+        Account acc = accountRepository.getById(id);
+        if(session.getAttribute("auth") != null && acc.isPhan_quyen()){
             Account account = accountRepository.findById(id);
             ArrayList<Account> accounts = accountRepository.findAll();
             ArrayList<Object[]> movieGenres = movieRepository.findAllMovieWithGenre();
@@ -55,7 +56,8 @@ public class AdminController {
     public String users(Model model,
                         @PathVariable("id") int id,
                         HttpSession session) {
-        if(session.getAttribute("auth") != null) {
+        Account acc = accountRepository.getById(id);
+        if(session.getAttribute("auth") != null && acc.isPhan_quyen()){
             Account account = accountRepository.findById(id);
             ArrayList<Account> accounts = accountRepository.findAll();
 
@@ -72,7 +74,8 @@ public class AdminController {
     public String manageData(Model model,
                              @PathVariable("id") int id,
                              HttpSession session){
-        if(session.getAttribute("auth") != null) {
+        Account acc = accountRepository.getById(id);
+        if(session.getAttribute("auth") != null && acc.isPhan_quyen()){
             Account account = accountRepository.findById(id);
             ArrayList<Genre> genres = genreRepository.findAll();
             ArrayList<Director> directors = directorRepository.findAll();
@@ -93,7 +96,8 @@ public class AdminController {
     public String film (Model model,
                         @PathVariable("id") int id,
                         HttpSession session){
-        if(session.getAttribute("auth") != null){
+        Account acc = accountRepository.getById(id);
+        if(session.getAttribute("auth") != null && acc.isPhan_quyen()){
             Account account = accountRepository.findById(id);
             ArrayList<Object[]> movieGenres = movieRepository.findAllMovieWithGenre();
 
@@ -112,7 +116,8 @@ public class AdminController {
     public String getAddData (Model model,
                             @PathVariable("id") int id,
                             HttpSession session){
-        if(session.getAttribute("auth") != null){
+        Account acc = accountRepository.getById(id);
+        if(session.getAttribute("auth") != null && acc.isPhan_quyen()){
             Account account = accountRepository.findById(id);
 
             model.addAttribute("admin", account);
@@ -136,7 +141,8 @@ public class AdminController {
     public String getAddDirector (Model model,
                                     @PathVariable("id") int id,
                                     HttpSession session){
-        if(session.getAttribute("auth") != null){
+        Account acc = accountRepository.getById(id);
+        if(session.getAttribute("auth") != null && acc.isPhan_quyen()){
             Account account = accountRepository.findById(id);
 
             model.addAttribute("admin", account);
@@ -160,7 +166,8 @@ public class AdminController {
     public String getAddGenre (Model model,
                                @PathVariable("id") int id,
                                HttpSession session){
-        if(session.getAttribute("auth") != null) {
+        Account acc = accountRepository.getById(id);
+        if(session.getAttribute("auth") != null && acc.isPhan_quyen()){
             Account account = accountRepository.findById(id);
 
             model.addAttribute("admin", account);
@@ -184,14 +191,18 @@ public class AdminController {
     public String getAddFilm (Model model,
                            @PathVariable("id") int id,
                            HttpSession session){
-        if(session.getAttribute("auth") != null){
+        Account acc = accountRepository.getById(id);
+        if(session.getAttribute("auth") != null && acc.isPhan_quyen()){
             Account account = accountRepository.findById(id);
-            ArrayList<Object[]> movieGenres = movieRepository.findAllMovieWithGenre();
+            ArrayList<Actor> actors = actorRepository.findAll();
+            ArrayList<Director> directors = directorRepository.findAll();
+            ArrayList<Genre> genres = genreRepository.findAll();
 
-            Map<Integer, String[]> movieWithGenre = GetMovieWithGenre.getMovieWithGenre(movieGenres);
-
-            model.addAttribute("movies", movieWithGenre);
             model.addAttribute("admin", account);
+            model.addAttribute("movie", new Movie());
+            model.addAttribute("actors", actors);
+            model.addAttribute("directors", directors);
+            model.addAttribute("genres", genres);
 
             return "layouts/addFilm";
         }
@@ -203,6 +214,7 @@ public class AdminController {
     public String postAddFilm (Model model,
                            @PathVariable("id") int id,
                            HttpSession session){
+
 
          return "layouts/addFilm";
     }

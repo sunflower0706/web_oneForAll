@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/CSS/login.css}">
 </head>
-<body>
+<body onload="error();">
     <div id="preloader">
         <div class="status">&nbsp;</div>
     </div>
-    <div id="hasError" th:text="${hasError}" hidden></div>
+    <input id="hasError" th:value="${hasError}" hidden/>
     <div class="wrapper">
         <div class="title-text">
             <div class="title login">Login Form</div>

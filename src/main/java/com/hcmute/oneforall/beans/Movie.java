@@ -8,7 +8,7 @@ import java.util.Set;
 public class Movie {
     @Id
     @Column(name = "idMV")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "ten_phim")

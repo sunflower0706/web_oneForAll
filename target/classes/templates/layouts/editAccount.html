@@ -4,10 +4,10 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head th:replace="fragments/header :: head">
 </head>
-<body>
+<body onload="checkChangeInfo();">
     <div layout:fragment="content" th:object="${account}">
         <link rel="stylesheet" th:href="@{/CSS/user.css}">
-        <div th:value="${session.success}" id="success" onload="checkChangeInfo()"></div>
+        <div th:text="${success}" id="success" hidden></div>
         <div id="preloader">
             <div class="status">&nbsp;</div>
         </div>
@@ -30,6 +30,10 @@
                             <span>Sửa thông tin</span></a>
                     </li>
                     <li>
+                        <a th:href="@{'/account/'+ ${account.getId()} +'/password/edit'}"><span class="las la-sync"></span>
+                            <span>Đổi mật khẩu</span></a>
+                    </li>
+                    <li>
                         <a th:href="@{/}"><span class="las la-sign-out-alt"></span>
                             <span>Về web</span></a>
                     </li>
@@ -47,13 +51,8 @@
                     <label for="nav-toggle">
                         <span class="las la-bars"></span>
                     </label>
-                    Lịch sử
+                    Chỉnh sửa thông tin
                 </h2>
-
-                <div class="search-wrapper">
-                    <span class="las la-search"></span>
-                    <input type="search" placeholder="Search here">
-                </div>
 
                 <div class="user-wrapper">
                     <img th:src="@{/images/avt4.jpg}" width="40px" height="40px" alt="">

@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Rating {
     @EmbeddedId
     @Column(name = "idRT")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private RatingKey id;
 
     @ManyToOne

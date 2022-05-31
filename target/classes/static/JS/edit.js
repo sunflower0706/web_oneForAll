@@ -12,10 +12,15 @@ function addGioiTinh() {
 }
 
 function checkChangeInfo(){
-    console.log(success.value)
-    if (success.value === true){
-        window.alert("ĐÃ CẬP NHẬT THÔNG TIN");
-    }else {
-        window.alert("CẬP NHẬT THÔNG TIN THẤT BẠI!!!! \n VUI LÒNG KIỂM TRA LẠI MẬT KHẨU")
+    if (success.innerHTML !== ""){
+        if (success.innerHTML === "true"){
+            window.alert("ĐÃ CẬP NHẬT THÔNG TIN");
+        }else {
+            window.alert("CẬP NHẬT THÔNG TIN THẤT BẠI!!!! \n VUI LÒNG KIỂM TRA LẠI MẬT KHẨU")
+        }
+        success.remove();
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
     }
 }

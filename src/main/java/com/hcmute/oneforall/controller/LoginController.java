@@ -22,7 +22,8 @@ public class LoginController {
 	public String account(Model model,
 						  @PathVariable("id") int id,
 						  HttpSession session){
-		if(session.getAttribute("auth") != null){
+		Account acc = accountRepository.findById(id);
+		if(session.getAttribute("auth") != null && acc.getId() == Integer.parseInt(session.getAttribute("id").toString())){
 			Account account = accountRepository.findById(id);
 			model.addAttribute("account", account);
 
@@ -36,7 +37,8 @@ public class LoginController {
 	public String getEditAccount(Model model,
 								 @PathVariable("id") int id,
 								 HttpSession session){
-		if(session.getAttribute("auth") != null){
+		Account acc = accountRepository.findById(id);
+		if(session.getAttribute("auth") != null && acc.getId() == Integer.parseInt(session.getAttribute("id").toString())){
 			Account account = accountRepository.findById(id);
 			model.addAttribute("account", account);
 
@@ -74,7 +76,8 @@ public class LoginController {
 	public String getEditPassword(Model model,
 								 @PathVariable("id") int id,
 								 HttpSession session){
-		if(session.getAttribute("auth") != null){
+		Account acc = accountRepository.findById(id);
+		if(session.getAttribute("auth") != null && acc.getId() == Integer.parseInt(session.getAttribute("id").toString())){
 			Account account = accountRepository.findById(id);
 
 			model.addAttribute("account", account);
@@ -110,6 +113,7 @@ public class LoginController {
 
 	@GetMapping(value = "/login")
 	public String login(Model model, HttpSession session){
+//		endSession(session);
 		model.addAttribute("account", new Account());
 		if (session.getAttribute("auth") == null){
 			session.getAttribute("auth");
@@ -136,6 +140,9 @@ public class LoginController {
 				String bcryptHashString = BCrypt.withDefaults().hashToString(12, password.toCharArray());
 
 				account.setMat_khau(bcryptHashString);
+				int size = accountRepository.size();
+				account.setId(size+1);
+				System.out.println(account.getId());
 				accountRepository.save(account);
 
 				setSession(session, account);

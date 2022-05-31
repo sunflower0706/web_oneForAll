@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class MovieDirector {
     @EmbeddedId
     @Column(name = "idMD")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private MovieDirectorKey id;
 
     @ManyToOne

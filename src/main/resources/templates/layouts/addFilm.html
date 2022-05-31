@@ -65,7 +65,7 @@
             </header>
 
             <main>
-                <form>
+                <form th:action="@{'/admin/' + ${admin.getId()} + '/film/add'}" method="post" >
                     <div class="add-film-grid">
                         <div class="add_film">
                             <div class="film-info-title">
@@ -110,39 +110,33 @@
                                 <div class="input_box fieldDirector">
                                     <span class="details">Đạo diễn: </span>
                                     <select class="rectangle" name="director">
-                                        <option value="" disabled selected>Choose your option</option>
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
+                                        <option th:each="i:${#numbers.sequence(0, directors.size()-1)}"
+                                                th:value="${i + 1}"
+                                                th:text="${directors[i].getHo() + ' ' + directors[i].getTen()}"></option>
                                     </select>
                                 </div>
                                 <button id="addDirector" class="button-loop">Add more fields</button>
                                 <div class="input_box fieldGenre">
                                     <span class="details">Thể loại: </span>
                                     <select class="rectangle" name="genre">
-                                        <option value="" disabled selected>Choose your option</option>
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
+                                        <option th:each="i:${#numbers.sequence(0, genres.size()-1)}"
+                                                th:value="${i + 1}"
+                                                th:text="${genres[i].getMo_ta()}"></option>
                                     </select>
                                 </div>
                                 <button id="addGenre" class="button-loop">Add more fields</button>
                                 <div class="input_box fieldActor">
                                     <span class="details">Diễn viên: </span>
                                     <select class="rectangle" name="actor">
-                                        <option value="" disabled selected>Choose your option</option>
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
+                                        <option th:each="i:${#numbers.sequence(0, actors.size()-1)}"
+                                                th:value="${i + 1}"
+                                                th:text="${actors[i].getHo() + ' ' + actors[i].getTen()}"></option>
                                     </select>
                                 </div>
                                 <button id="addActor" class="button-loop">Add more fields</button>
                             </div>
                         </div>
                         <div class="action">
-                            <div class="button">
-                                <input type="submit" class="button_cancel" value="HỦY">
-                            </div>
                             <div class="button">
                                 <input type="submit" class="button_save" value="LƯU">
                             </div>

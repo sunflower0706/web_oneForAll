@@ -2,16 +2,14 @@ package com.hcmute.oneforall.controller;
 
 import com.hcmute.oneforall.beans.*;
 import com.hcmute.oneforall.repositories.*;
+import com.hcmute.oneforall.utils.GetMovieWithGenre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 @Controller
@@ -41,21 +39,7 @@ public class AdminController {
             ArrayList<Account> accounts = accountRepository.findAll();
             ArrayList<Object[]> movieGenres = movieRepository.findAllMovieWithGenre();
 
-            Map<Integer, String[]> movieWithGenre = new HashMap<>();
-
-            for (Object[] movie : movieGenres) {
-                int idMV = Integer.parseInt(movie[0].toString());
-                if (!movieWithGenre.containsKey(idMV)) {
-                    movieWithGenre.put(idMV, new String[]{"", ""});
-                }
-                String name = movie[1].toString();
-                String genre = movie[2].toString();
-                if (!movieWithGenre.get(idMV)[1].equals("")) {
-                    genre = movieWithGenre.get(idMV)[1] + ", " + movie[2].toString();
-                }
-                String[] nameAndGenre = {name, genre};
-                movieWithGenre.put(idMV, nameAndGenre);
-            }
+            Map<Integer, String[]> movieWithGenre = GetMovieWithGenre.getMovieWithGenre(movieGenres);
 
             model.addAttribute("accounts", accounts);
             model.addAttribute("movies", movieWithGenre);
@@ -111,7 +95,11 @@ public class AdminController {
                         HttpSession session){
         if(session.getAttribute("auth") != null){
             Account account = accountRepository.findById(id);
+            ArrayList<Object[]> movieGenres = movieRepository.findAllMovieWithGenre();
 
+            Map<Integer, String[]> movieWithGenre = GetMovieWithGenre.getMovieWithGenre(movieGenres);
+
+            model.addAttribute("movies", movieWithGenre);
             model.addAttribute("admin", account);
 
             return "layouts/film";
@@ -120,63 +108,94 @@ public class AdminController {
         return "redirect:/404";
     }
 
-    @GetMapping(value = "/{id}/film/edit")
-    public String editFilm (Model model,
+    @GetMapping(value = "/{id}/film/add")
+    public String addFilm (Model model,
                         @PathVariable("id") int id,
                             HttpSession session){
         if(session.getAttribute("auth") != null){
             Account account = accountRepository.findById(id);
+            ArrayList<Object[]> movieGenres = movieRepository.findAllMovieWithGenre();
 
+            Map<Integer, String[]> movieWithGenre = GetMovieWithGenre.getMovieWithGenre(movieGenres);
+
+            model.addAttribute("movies", movieWithGenre);
             model.addAttribute("admin", account);
 
-            return "layouts/editFilm";
+            return "layouts/addFilm";
         }
 
         return "redirect:/404";
     }
 
-    @GetMapping(value = "/{id}/data/edit/actor")
-    public String editData (Model model,
+    @GetMapping(value = "/{id}/data/add/actor")
+    public String getAddData (Model model,
                             @PathVariable("id") int id,
                             HttpSession session){
         if(session.getAttribute("auth") != null){
             Account account = accountRepository.findById(id);
 
             model.addAttribute("admin", account);
+            model.addAttribute("actor", new Actor());
 
-            return "layouts/editDataActor";
+            return "layouts/addDataActor";
         }
 
         return "redirect:/404";
     }
 
-    @GetMapping(value = "/{id}/data/edit/director")
-    public String editDataDirector (Model model,
+    @PostMapping(value = "/{id}/data/add/actor")
+    public String postAddData (@ModelAttribute("actor") Actor actor,
+                               @PathVariable("id") int id){
+        actorRepository.save(actor);
+
+        return "redirect:/admin/"+ id + "/data/add/actor";
+    }
+
+    @GetMapping(value = "/{id}/data/add/director")
+    public String getAddDirector (Model model,
                                     @PathVariable("id") int id,
                                     HttpSession session){
         if(session.getAttribute("auth") != null){
             Account account = accountRepository.findById(id);
 
             model.addAttribute("admin", account);
+            model.addAttribute("director", new Director());
 
-            return "layouts/editDataDirector";
+            return "layouts/addDataDirector";
         }
 
         return "redirect:/404";
     }
 
-    @GetMapping(value = "/{id}/data/edit/genre")
-    public String editDataGenre (Model model,
-                                 @PathVariable("id") int id,
-                                 HttpSession session){
+    @PostMapping(value = "/{id}/data/add/director")
+    public String postAddDirector (@ModelAttribute("director") Director director,
+                                   @PathVariable("id") int id){
+        directorRepository.save(director);
+
+        return "redirect:/admin/"+ id + "/data/add/director";
+    }
+
+    @GetMapping(value = "/{id}/data/add/genre")
+    public String getAddGenre (Model model,
+                               @PathVariable("id") int id,
+                               HttpSession session){
         if(session.getAttribute("auth") != null) {
             Account account = accountRepository.findById(id);
 
             model.addAttribute("admin", account);
+            model.addAttribute("genre", new Genre());
 
-            return "layouts/editDataGenre";
+            return "layouts/addDataGenre";
         }
 
         return "redirect:/404";
+    }
+
+    @PostMapping(value = "/{id}/data/add/genre")
+    public String postAddGenre (@ModelAttribute("genre") Genre genre,
+                                @PathVariable("id") int id){
+        genreRepository.save(genre);
+
+        return "redirect:/admin/"+ id + "/data/add/genre";
     }
 }

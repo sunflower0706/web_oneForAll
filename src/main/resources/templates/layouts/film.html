@@ -7,6 +7,9 @@
 <body>
     <div layout:fragment="content" th:object="${admin}">
         <link rel="stylesheet" th:href="@{/CSS/admin.css}">
+        <div id="preloader">
+            <div class="status">&nbsp;</div>
+        </div>
         <input type="checkbox" id="nav-toggle">
         <div class="sidebar">
         <div class="sidebar-brand">
@@ -58,9 +61,9 @@
             </div>
 
             <div class="user-wrapper">
-                <img src="img/avt4.jpg" width="40px" height="40px" alt="">
+                <img th:src="@{/images/avt4.jpg}" width="40px" height="40px" alt="">
                 <div>
-                    <h4>Liluphuong</h4>
+                    <h4 th:text="${admin.getHo() + ' ' + admin.getTen()}"></h4>
                     <small>Super admin</small>
                 </div>
             </div>
@@ -71,8 +74,9 @@
                 <div class="card">
                     <div class="card-header">
                         <h3>Danh sách phim</h3>
-                        <button>Add <span class="las la-plus">
-                        </span></button>
+                        <a th:href="@{'/admin/' + ${admin.getId()} + '/film/add'}">
+                            <button>Add <span class="las la-plus"></span></button>
+                        </a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -85,49 +89,12 @@
                                         <td>Thao tác</td>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody th:each="movie :${movies}">
                                     <tr>
-                                        <td>Wanda Doctor Strange</td>
-                                        <td>Viễn tưởng</td>
-                                        <td>2022</td>
-                                        <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Wanda Doctor Strange</td>
-                                        <td>Viễn tưởng</td>
-                                        <td>2022</td>
-                                        <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Wanda Doctor Strange</td>
-                                        <td>Viễn tưởng</td>
-                                        <td>2022</td>
-                                        <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
-                                    </tr><tr>
-                                        <td>Wanda Doctor Strange</td>
-                                        <td>Viễn tưởng</td>
-                                        <td>2022</td>
-                                        <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
-                                    </tr><tr>
-                                        <td>Wanda Doctor Strange</td>
-                                        <td>Viễn tưởng</td>
-                                        <td>2022</td>
-                                        <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
-                                    </tr><tr>
-                                        <td>Wanda Doctor Strange</td>
-                                        <td>Viễn tưởng</td>
-                                        <td>2022</td>
-                                        <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
-                                    </tr><tr>
-                                        <td>Wanda Doctor Strange</td>
-                                        <td>Viễn tưởng</td>
-                                        <td>2022</td>
-                                        <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
-                                    </tr><tr>
-                                        <td>Wanda Doctor Strange</td>
-                                        <td>Viễn tưởng</td>
-                                        <td>2022</td>
-                                        <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
+                                        <td th:text="${movie.value[0]}"></td>
+                                        <td th:text="${movie.value[1]}"></td>
+                                        <td th:text="${movie.value[2]}"></td>
+                                        <td><div class="delete-btn">Xóa</div></td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -82,13 +82,13 @@
                             <div class="input_box">
                                 <span class="details">Giới tính: </span>
                                 <th:block th:if="${account.isGioi_tinh()} == true">
-                                    <input class="cicrle gender" type="radio" name="gender" value="Nam" onchange="addGioiTinh()" checked>Nam
-                                    <input class="cicrle gender" type="radio" name="gender" value="Nữ" onchange="addGioiTinh()">Nữ
+                                    <input class="cicrle" type="radio" name="gender" value="Nam" onchange="addGioiTinh()" checked>Nam
+                                    <input class="cicrle" type="radio" name="gender" value="Nữ" onchange="addGioiTinh()">Nữ
                                     <input th:field="*{gioi_tinh}" class="gioiTinh" value="true" hidden/>
                                 </th:block>
                                 <th:block th:if="${account.isGioi_tinh()} == false">
-                                    <input class="cicrle gender" type="radio" name="gender" value="Nam" onchange="addGioiTinh()">Nam
-                                    <input class="cicrle gender" type="radio" name="gender" value="Nữ" onchange="addGioiTinh()" checked>Nữ
+                                    <input class="cicrle" type="radio" name="gender" value="Nam" onchange="addGioiTinh()">Nam
+                                    <input class="cicrle" type="radio" name="gender" value="Nữ" onchange="addGioiTinh()" checked>Nữ
                                     <input th:field="*{gioi_tinh}" class="gioiTinh" value="false" hidden/>
                                 </th:block>
                             </div>

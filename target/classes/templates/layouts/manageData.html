@@ -33,7 +33,7 @@
                             <span>Người dùng</span></a>
                     </li>
                     <li>
-                        <a th:href="@{/}"><span class="las la-file-video"></span>
+                        <a th:href="@{'/admin/' + ${admin.getId()} + '/film'}"><span class="las la-file-video"></span>
                             <span>Film</span></a>
                     </li>
                     <li>
@@ -78,7 +78,9 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h3>Danh sách diễn viên</h3>
-                                    <button th:href="@{'/admin/' + ${admin.getId()} + '/data/edit/actor'}">Add<span class="las la-plus"></span></button>
+                                    <a th:href="@{'/admin/' + ${admin.getId()} + '/data/add/actor'}">
+                                        <button>Add<span class="las la-plus"></span></button>
+                                    </a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -92,7 +94,7 @@
                                             <tbody th:each="actor:${actors}">
                                                 <tr>
                                                     <td th:text="${actor.getHo() + ' ' + actor.getTen()}"></td>
-                                                    <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
+                                                    <td><div class="delete-btn">Xóa</div></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -106,7 +108,9 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h3>Danh sách đạo diễn</h3>
-                                    <button th:href="@{'/admin/' + ${admin.getId()} + '/data/edit/director'}">Add <span class="las la-plus"></span></button>
+                                    <a th:href="@{'/admin/' + ${admin.getId()} + '/data/add/director'}">
+                                        <button>Add <span class="las la-plus"></span></button>
+                                    </a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -120,7 +124,7 @@
                                             <tbody th:each="director:${directors}">
                                             <tr>
                                                 <td th:text="${director.getHo() + ' ' + director.getTen()}"></td>
-                                                <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
+                                                <td><div class="delete-btn">Xóa</div></td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -134,7 +138,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h3>Danh sách thể loại</h3>
-                                    <a th:href="@{'/admin/' + ${admin.getId()} + '/data/edit/genre'}">
+                                    <a th:href="@{'/admin/' + ${admin.getId()} + '/data/add/genre'}">
                                         <button>Add<span class="las la-plus"></span></button>
                                     </a>
                                 </div>
@@ -150,7 +154,7 @@
                                             <tbody th:each="genre:${genres}">
                                             <tr>
                                                 <td th:text="${genre.getMo_ta()}"></td>
-                                                <td><div class="edit-btn">Chỉnh sửa</div> <div class="delete-btn">Xóa</div></td>
+                                                <td><div class="delete-btn">Xóa</div></td>
                                             </tr>
                                             </tbody>
                                         </table>

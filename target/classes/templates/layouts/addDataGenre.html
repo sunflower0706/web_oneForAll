@@ -7,6 +7,9 @@
 <body>
     <div layout:fragment="content" th:object="${admin}">
         <link rel="stylesheet" th:href="@{/CSS/admin.css}">
+        <div id="preloader">
+            <div class="status">&nbsp;</div>
+        </div>
         <input type="checkbox" id="nav-toggle">
         <div class="sidebar">
             <div class="sidebar-brand">
@@ -58,42 +61,33 @@
                 </div>
 
                 <div class="user-wrapper">
-                    <img src="img/avt4.jpg" width="40px" height="40px" alt="">
+                    <img th:src="@{/images/avt4.jpg}" width="40px" height="40px" alt="">
                     <div>
-                        <h4>Liluphuong</h4>
+                        <h4 th:text="${admin.getHo() + ' ' + admin.getTen()}"></h4>
                         <small>Super admin</small>
                     </div>
                 </div>
             </header>
 
             <main>
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Thêm diễn viên</h3>
-                        <button>Add <span class="las la-plus">
-                                    </span></button>
-                    </div>
-                    <div class="card-body">
-                        <div class="input_box">
-                            <span class="details">Họ: </span>
-                            <input class="rectangle" type="text" placeholder="Enter your first name" required>
+                <form th:action="@{'/admin/' + ${admin.getId()} + '/data/add/genre'}" method="post" th:object="${genre}">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Thêm thể loại</h3>
                         </div>
-                        <div class="input_box">
-                            <span class="details">Tên: </span>
-                            <input class="rectangle" type="text" placeholder="Enter your last name" required>
-                        </div>
-                        <div class="input_box">
-                            <span class="details">Giới tính: </span>
-                            <input class="cicrle" type="radio" name="gender">Nam
-                            <input class="cicrle" type="radio" name="gender">Nữ
+                        <div class="card-body">
+                            <div class="input_box">
+                                <span class="details">Thể loại: </span>
+                                <input class="rectangle" type="text" th:field="*{mo_ta}" placeholder="Enter your description" required>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="action">
-                    <div class="button">
-                        <button type="submit" class="button_save">HỦY</button>
+                    <div class="action">
+                        <div class="button">
+                            <button type="submit" class="button_save">LƯU</button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </main>
         </div>
     </div>

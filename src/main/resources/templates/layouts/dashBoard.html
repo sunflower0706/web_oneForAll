@@ -98,8 +98,8 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3>Phim gần đây</h3>
-                                <button>See all <span class="las la-arrow-right">
-                                </span></button>
+                                <a th:href="@{'/admin/' + ${admin.getId()} + '/film'}"><button>See all <span class="las la-arrow-right">
+                                </span></button></a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -125,8 +125,8 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3>Người dùng mới</h3>
-                                <button>See all <span class="las la-arrow-right">
-                                </span></button>
+                                <a th:href="@{'/admin/' + ${admin.getId()} + '/users'}"><button>See all <span class="las la-arrow-right">
+                                </span></button></a>
                             </div>
                             <div class="card-body" th:each="account, state :${accounts}" th:if="${state.index} < 5">
                                 <div class="user">

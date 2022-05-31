@@ -13,7 +13,9 @@
         <input type="checkbox" id="nav-toggle">
         <div class="sidebar">
             <div class="sidebar-brand">
-            <h2><span class="lab la-youtube"></span><span>ALLFORONE</span></h2>
+                <a th:href="@{/}">
+                    <h2><span class="lab la-youtube"></span><span>ALLFORONE</span></h2>
+                </a>
         </div>
 
         <div class="sidebar-menu">
@@ -119,7 +121,7 @@
                                         <option value="3">Option 3</option>
                                     </select>
                                 </div>
-                                <button id="addDirector">Add more fields</button>
+                                <button id="addDirector" class="button-loop">Add more fields</button>
                                 <div class="input_box fieldGenre">
                                     <span class="details">Thể loại: </span>
                                     <select class="rectangle" name="genre">
@@ -129,7 +131,7 @@
                                         <option value="3">Option 3</option>
                                     </select>
                                 </div>
-                                <button id="addGenre">Add more fields</button>
+                                <button id="addGenre" class="button-loop">Add more fields</button>
                                 <div class="input_box fieldActor">
                                     <span class="details">Diễn viên: </span>
                                     <select class="rectangle" name="actor">
@@ -139,7 +141,7 @@
                                         <option value="3">Option 3</option>
                                     </select>
                                 </div>
-                                <button id="addActor">Add more fields</button>
+                                <button id="addActor" class="button-loop">Add more fields</button>
                             </div>
                         </div>
                         <div class="action">

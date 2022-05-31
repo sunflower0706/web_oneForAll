@@ -473,6 +473,22 @@ td {
     cursor: pointer;
 }
 
+.button-loop{
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;
+    width: 100px;
+    outline: none;
+}
+
+.card-body .info-basic h4 {
+    width: 100px;
+}
+
+.card-body .info-account div {
+    width: 230px;
+}
+
 @media only screen and (max-width: 1200px) {
     .sidebar {
         width: 70px;

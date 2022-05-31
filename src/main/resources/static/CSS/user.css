@@ -231,10 +231,8 @@ main {
 }
 
 .edit-btn {
-    position: absolute;
-    right: 0;
-    padding-right: 15px;
     cursor: pointer;
+    padding-bottom: 10px;
 }
 
 .account-info-title {

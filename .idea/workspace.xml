@@ -4,33 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca46439f-e996-4f94-8ad8-c2c1c5ae8113" name="Changes" comment="add and code some functions">
+    <list default="true" id="ca46439f-e996-4f94-8ad8-c2c1c5ae8113" name="Changes" comment="code some functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/ActorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/ActorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/oneforall/repositories/MovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/editAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/editAccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/editDataActor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/addDataActor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/editDataDirector.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/addDataDirector.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/editDataGenre.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/addDataGenre.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/editFilm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/addFilm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/film.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/film.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/manageData.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/manageData.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/ActorRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/ActorRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/MovieRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hcmute/oneforall/repositories/MovieRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/dashBoard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/dashBoard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/editAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/editAccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/editDataActor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/editDataDirector.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/editDataGenre.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/editFilm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/film.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/film.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/manageData.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/manageData.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/JS/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/JS/edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/addFilm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/addFilm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/JS/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/JS/edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/addFilm.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/addFilm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +21,9 @@
       <list>
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -164,7 +143,7 @@
       <workItem from="1653656629760" duration="8540000" />
       <workItem from="1653665990272" duration="55553000" />
       <workItem from="1653818166700" duration="17086000" />
-      <workItem from="1653902900665" duration="40563000" />
+      <workItem from="1653902900665" duration="44122000" />
     </task>
     <task id="LOCAL-00001" summary="add movie theatre">
       <created>1652968945470</created>
@@ -306,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653952476295</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="code some functions">
+      <created>1653957860765</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1653957860765</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,6 +335,7 @@
     <MESSAGE value="add html" />
     <MESSAGE value="edit account function" />
     <MESSAGE value="add and code some functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="add and code some functions" />
+    <MESSAGE value="code some functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="code some functions" />
   </component>
 </project>
